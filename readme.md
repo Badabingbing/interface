@@ -1,10 +1,8 @@
 # Instructions
 
-Importer le fichier db/interface.sql dans phpmyadmin  
-
-Se placer dans le dossier de l'appli avec la commande cd
-
-Ecrire composer update dans la console  
+Importer le fichier db/interface.sql dans phpmyadmin.  
+Se placer dans le dossier de l'appli avec la commande cd.  
+Ecrire composer update dans la console.  
 Remplir les champs demandés dans la console :  
 * database_host : appuyer sur entrée
 * database_port : appuyer sur entrée
