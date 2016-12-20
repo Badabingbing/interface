@@ -1,5 +1,6 @@
 # Instructions
-Aller dans PHPMyAdmin. Créer une nouvelle base de donnée.  
+Aller dans PHPMyAdmin.  
+Créer une nouvelle base de donnée.  
 Importer le fichier db/interface.sql dans phpmyadmin.  
 Se placer dans le dossier de l'appli avec la commande cd.  
 Ecrire composer update dans la console.  
