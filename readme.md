@@ -6,7 +6,7 @@ Ecrire composer update dans la console.
 Remplir les champs demandés dans la console :  
 * database_host : appuyer sur entrée
 * database_port : appuyer sur entrée
-* database_user : entrer votre nom d'utilisateur phpmyadmin (root ou autre)
+* database_user : entrer son nom d'utilisateur phpmyadmin (root ou autre)
 * database_password : le mdp de cet utilisateur
 * mailer_transport : appuyer sur entrée
 * mailer_host : pareil
