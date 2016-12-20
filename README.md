@@ -1,11 +1,12 @@
 # Instructions
-
+Aller dans PHPMyAdmin. Créer une nouvelle base de donnée.  
 Importer le fichier db/interface.sql dans phpmyadmin.  
 Se placer dans le dossier de l'appli avec la commande cd.  
 Ecrire composer update dans la console.  
 Remplir les champs demandés dans la console :  
 * database_host : appuyer sur entrée
-* database_port : appuyer sur entrée
+* database_port : appuyer sur entrée  
+* database_name : le nom de la bdd que vous avez créée
 * database_user : entrer son nom d'utilisateur phpmyadmin (root ou autre)
 * database_password : le mdp de cet utilisateur
 * mailer_transport : appuyer sur entrée
