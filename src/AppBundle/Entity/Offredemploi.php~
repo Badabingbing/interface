@@ -1,0 +1,173 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Offredemploi
+ *
+ * @ORM\Table(name="OFFREDEMPLOI", indexes={@ORM\Index(name="fk_OFFREDEMPLOI_STATUT1_idx", columns={"STATUT_idStatut"}), @ORM\Index(name="fk_OFFREDEMPLOI_METIER1_idx", columns={"METIER_idMETIER"}), @ORM\Index(name="fk_OFFREDEMPLOI_RQTH1_idx", columns={"RQTH_idRQTH"}), @ORM\Index(name="fk_OFFREDEMPLOI_NIVEAUETUDE1_idx", columns={"NIVEAUETUDE_idNiveauEtude"})})
+ * @ORM\Entity
+ */
+class Offredemploi
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateSaisieOE", type="date", nullable=true)
+     */
+    private $datesaisieoe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DebutOE", type="string", length=45, nullable=true)
+     */
+    private $debutoe;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DureeChiffreOE", type="integer", nullable=true)
+     */
+    private $dureechiffreoe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DureeTempsOE", type="string", length=45, nullable=true)
+     */
+    private $dureetempsoe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Horaire", type="string", length=45, nullable=true)
+     */
+    private $horaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Remuneration", type="string", length=45, nullable=true)
+     */
+    private $remuneration;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Descriptif", type="string", length=225, nullable=true)
+     */
+    private $descriptif;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TYPECONTRAT_idTypeContrat", type="integer", nullable=false)
+     */
+    private $typecontratIdtypecontrat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="FICHEOFFRE_idFicheOffre", type="integer", nullable=false)
+     */
+    private $ficheoffreIdficheoffre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TypeContrat", type="string", length=45, nullable=true)
+     */
+    private $typecontrat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LieuTravail", type="string", length=45, nullable=true)
+     */
+    private $lieutravail;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idOE", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idoe;
+
+    /**
+     * @var \AppBundle\Entity\Metier
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Metier")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="METIER_idMETIER", referencedColumnName="idMETIER")
+     * })
+     */
+    private $metiermetier;
+
+    /**
+     * @var \AppBundle\Entity\Niveauetude
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Niveauetude")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="NIVEAUETUDE_idNiveauEtude", referencedColumnName="idNiveauEtude")
+     * })
+     */
+    private $niveauetudeniveauetude;
+
+    /**
+     * @var \AppBundle\Entity\Rqth
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
+     * })
+     */
+    private $rqthrqth;
+
+    /**
+     * @var \AppBundle\Entity\Statut
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Statut")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="STATUT_idStatut", referencedColumnName="idStatut")
+     * })
+     */
+    private $statutstatut;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Permis", inversedBy="offredemploioe")
+     * @ORM\JoinTable(name="offredemploi_has_permis",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="OFFREDEMPLOI_idOE", referencedColumnName="idOE")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="PERMIS_idPermis", referencedColumnName="idPermis")
+     *   }
+     * )
+     */
+    private $permispermis;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", mappedBy="offredemploioe")
+     */
+    private $useruser;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->permispermis = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->useruser = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

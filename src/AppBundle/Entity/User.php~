@@ -1,0 +1,109 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="USER", indexes={@ORM\Index(name="fk_USER_STATUT1_idx", columns={"STATUT_idStatut"})})
+ * @ORM\Entity
+ */
+class User
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomUser", type="string", length=45, nullable=true)
+     */
+    private $nomuser;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenomUser", type="string", length=45, nullable=true)
+     */
+    private $prenomuser;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=true)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ProfilUser", type="string", length=45, nullable=true)
+     */
+    private $profiluser;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idUser", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $iduser;
+
+    /**
+     * @var \AppBundle\Entity\Statut
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Statut")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="STATUT_idStatut", referencedColumnName="idStatut")
+     * })
+     */
+    private $statutstatut;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\DemandeurEmploi", inversedBy="useruser")
+     * @ORM\JoinTable(name="user_has_demandeurdemploi",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="USER_idUser", referencedColumnName="idUser")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="DEMANDEURDEMPLOI_idDE", referencedColumnName="idDE")
+     *   }
+     * )
+     */
+    private $demandeurdemploide;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Offredemploi", inversedBy="useruser")
+     * @ORM\JoinTable(name="user_has_offredemploi",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="USER_idUser", referencedColumnName="idUser")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="OFFREDEMPLOI_idOE", referencedColumnName="idOE")
+     *   }
+     * )
+     */
+    private $offredemploioe;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->demandeurdemploide = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->offredemploioe = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

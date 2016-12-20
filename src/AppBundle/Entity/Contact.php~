@@ -1,0 +1,76 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contact
+ *
+ * @ORM\Table(name="CONTACT", indexes={@ORM\Index(name="fk_CONTACT_ENTREPRISE1_idx", columns={"ENTREPRISE_idEntreprise"}), @ORM\Index(name="fk_CONTACT_GENRE1_idx", columns={"GENRE_idGENRE"})})
+ * @ORM\Entity
+ */
+class Contact
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NomContact", type="string", length=45, nullable=true)
+     */
+    private $nomcontact;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenomContact", type="string", length=45, nullable=true)
+     */
+    private $prenomcontact;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mailContact", type="string", length=45, nullable=true)
+     */
+    private $mailcontact;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telContact", type="string", length=45, nullable=true)
+     */
+    private $telcontact;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idContact", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $idcontact;
+
+    /**
+     * @var \AppBundle\Entity\Entreprise
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Entreprise")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ENTREPRISE_idEntreprise", referencedColumnName="idEntreprise")
+     * })
+     */
+    private $entrepriseentreprise;
+
+    /**
+     * @var \AppBundle\Entity\Genre
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Genre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="GENRE_idGENRE", referencedColumnName="idGENRE")
+     * })
+     */
+    private $genregenre;
+
+
+}
+

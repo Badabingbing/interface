@@ -1,0 +1,283 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DemandeurEmploi
+ *
+ * @ORM\Table(name="DEMANDEUR_EMPLOI", indexes={@ORM\Index(name="fk_FLUX_GENRE_idx", columns={"GENRE_idGENRE"}), @ORM\Index(name="fk_FLUX_METIER1_idx", columns={"METIER_idMETIER"}), @ORM\Index(name="fk_FLUX_STATUT1_idx", columns={"STATUT_idStatut"}), @ORM\Index(name="fk_FLUX_NIVEAUETUDE2_idx", columns={"NIVEAUETUDE_idNiveauEtude1"}), @ORM\Index(name="fk_FLUX_ADRESSE1_idx", columns={"ADRESSE_idAdresse"}), @ORM\Index(name="fk_DEMANDEURDEMPLOI_RQTH1_idx", columns={"RQTH_idRQTH"})})
+ * @ORM\Entity
+ */
+class DemandeurEmploi
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_inscription_DE", type="date", nullable=true)
+     */
+    private $dateInscriptionDe;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_derniere_modif_DE", type="datetime", nullable=true)
+     */
+    private $dateDerniereModifDe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo_DE", type="string", length=255, nullable=true)
+     */
+    private $photoDe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="profilDEcol", type="string", length=45, nullable=true)
+     */
+    private $profildecol;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_DE", type="string", length=100, nullable=false)
+     */
+    private $nomDe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom_DE", type="string", length=100, nullable=false)
+     */
+    private $prenomDe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel1_DE", type="string", length=10, nullable=false)
+     */
+    private $tel1De;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel2_DE", type="string", length=10, nullable=true)
+     */
+    private $tel2De;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mail_DE", type="string", length=100, nullable=true)
+     */
+    private $mailDe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qpv", type="string", length=45, nullable=true)
+     */
+    private $qpv;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbr_enfant_DE", type="integer", nullable=true)
+     */
+    private $nbrEnfantDe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_naissance", type="string", length=45, nullable=true)
+     */
+    private $dateNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tranche_age", type="string", length=50, nullable=true)
+     */
+    private $trancheAge;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville_naissance", type="string", length=50, nullable=true)
+     */
+    private $villeNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dept_naissance", type="string", length=15, nullable=true)
+     */
+    private $deptNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pays_naissance", type="string", length=50, nullable=true)
+     */
+    private $paysNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nationalite_DE", type="string", length=50, nullable=true)
+     */
+    private $nationaliteDe;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="titre_sejour_DE", type="boolean", nullable=true)
+     */
+    private $titreSejourDe;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="autorisation_travail", type="boolean", nullable=true)
+     */
+    private $autorisationTravail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="locomotion", type="string", length=45, nullable=true)
+     */
+    private $locomotion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num_pole_emploi_DE", type="string", length=8, nullable=true)
+     */
+    private $numPoleEmploiDe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="structure_ref", type="string", length=45, nullable=true)
+     */
+    private $structureRef;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="allocation", type="string", length=45, nullable=true)
+     */
+    private $allocation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="diplome_pro", type="string", length=45, nullable=true)
+     */
+    private $diplomePro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie_socio", type="string", length=45, nullable=true)
+     */
+    private $categorieSocio;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDE", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idde;
+
+    /**
+     * @var \AppBundle\Entity\Rqth
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
+     * })
+     */
+    private $rqthrqth;
+
+    /**
+     * @var \AppBundle\Entity\Adresse
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ADRESSE_idAdresse", referencedColumnName="idAdresse")
+     * })
+     */
+    private $adresseadresse;
+
+    /**
+     * @var \AppBundle\Entity\Genre
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Genre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="GENRE_idGENRE", referencedColumnName="idGENRE")
+     * })
+     */
+    private $genregenre;
+
+    /**
+     * @var \AppBundle\Entity\Metier
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Metier")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="METIER_idMETIER", referencedColumnName="idMETIER")
+     * })
+     */
+    private $metiermetier;
+
+    /**
+     * @var \AppBundle\Entity\Niveauetude
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Niveauetude")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="NIVEAUETUDE_idNiveauEtude1", referencedColumnName="idNiveauEtude")
+     * })
+     */
+    private $niveauetudeniveauetude1;
+
+    /**
+     * @var \AppBundle\Entity\Statut
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Statut")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="STATUT_idStatut", referencedColumnName="idStatut")
+     * })
+     */
+    private $statutstatut;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Permis", mappedBy="demandeurdemploide")
+     */
+    private $permispermis;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", mappedBy="demandeurdemploide")
+     */
+    private $useruser;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->permispermis = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->useruser = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

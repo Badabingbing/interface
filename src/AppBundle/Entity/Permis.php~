@@ -1,0 +1,63 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Permis
+ *
+ * @ORM\Table(name="PERMIS")
+ * @ORM\Entity
+ */
+class Permis
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="permis", type="string", length=10, nullable=true)
+     */
+    private $permis;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idPermis", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idpermis;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Offredemploi", mappedBy="permispermis")
+     */
+    private $offredemploioe;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\DemandeurEmploi", inversedBy="permispermis")
+     * @ORM\JoinTable(name="permis_has_demandeurdemploi",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="PERMIS_idPermis", referencedColumnName="idPermis")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="DEMANDEURDEMPLOI_idDE", referencedColumnName="idDE")
+     *   }
+     * )
+     */
+    private $demandeurdemploide;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->offredemploioe = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->demandeurdemploide = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

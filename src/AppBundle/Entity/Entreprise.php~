@@ -1,0 +1,60 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Entreprise
+ *
+ * @ORM\Table(name="ENTREPRISE", indexes={@ORM\Index(name="fk_ENTREPRISE_ADRESSE1_idx", columns={"ADRESSE_idAdresse"}), @ORM\Index(name="fk_ENTREPRISE_OFFREDEMPLOI1_idx", columns={"OFFREDEMPLOI_idOE"})})
+ * @ORM\Entity
+ */
+class Entreprise
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="RaisonSociale", type="string", length=45, nullable=true)
+     */
+    private $raisonsociale;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreOE", type="string", length=45, nullable=true)
+     */
+    private $nombreoe;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idEntreprise", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $identreprise;
+
+    /**
+     * @var \AppBundle\Entity\Adresse
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ADRESSE_idAdresse", referencedColumnName="idAdresse")
+     * })
+     */
+    private $adresseadresse;
+
+    /**
+     * @var \AppBundle\Entity\Offredemploi
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Offredemploi")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="OFFREDEMPLOI_idOE", referencedColumnName="idOE")
+     * })
+     */
+    private $offredemploioe;
+
+
+}
+

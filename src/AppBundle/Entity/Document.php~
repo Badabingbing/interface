@@ -1,0 +1,53 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Document
+ *
+ * @ORM\Table(name="DOCUMENT", indexes={@ORM\Index(name="fk_DOCUMENT_OFFREDEMPLOI1_idx", columns={"OFFREDEMPLOI_idOE"}), @ORM\Index(name="fk_DOCUMENT_DEMANDEUR_EMPLOI1_idx", columns={"DEMANDEUR_EMPLOI_idDE"})})
+ * @ORM\Entity
+ */
+class Document
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="document", type="string", length=45, nullable=true)
+     */
+    private $document;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idDocuement", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $iddocuement;
+
+    /**
+     * @var \AppBundle\Entity\DemandeurEmploi
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\DemandeurEmploi")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="DEMANDEUR_EMPLOI_idDE", referencedColumnName="idDE")
+     * })
+     */
+    private $demandeurEmploide;
+
+    /**
+     * @var \AppBundle\Entity\Offredemploi
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Offredemploi")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="OFFREDEMPLOI_idOE", referencedColumnName="idOE")
+     * })
+     */
+    private $offredemploioe;
+
+
+}
+

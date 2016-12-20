@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Adresse
+ *
+ * @ORM\Table(name="ADRESSE")
+ * @ORM\Entity
+ */
+class Adresse
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=100, nullable=true)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codePostal", type="string", length=5, nullable=true)
+     */
+    private $codepostal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=50, nullable=true)
+     */
+    private $ville;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idAdresse", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idadresse;
+
+
+}
+

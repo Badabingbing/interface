@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Demandeuremplois list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Dateinscriptionde</th>
+                <th>Datedernieremodifde</th>
+                <th>Photode</th>
+                <th>Profildecol</th>
+                <th>Nomde</th>
+                <th>Prenomde</th>
+                <th>Tel1de</th>
+                <th>Tel2de</th>
+                <th>Mailde</th>
+                <th>Qpv</th>
+                <th>Nbrenfantde</th>
+                <th>Datenaissance</th>
+                <th>Trancheage</th>
+                <th>Villenaissance</th>
+                <th>Deptnaissance</th>
+                <th>Paysnaissance</th>
+                <th>Nationalitede</th>
+                <th>Titresejourde</th>
+                <th>Autorisationtravail</th>
+                <th>Locomotion</th>
+                <th>Numpoleemploide</th>
+                <th>Structureref</th>
+                <th>Allocation</th>
+                <th>Diplomepro</th>
+                <th>Categoriesocio</th>
+                <th>Idde</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demandeurEmploi in demandeurEmplois %}
+            <tr>
+                <td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.dateInscriptionDe }}</a></td>
+                <td>{% if demandeurEmploi.dateDerniereModifDe %}{{ demandeurEmploi.dateDerniereModifDe|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ demandeurEmploi.photoDe }}</td>
+                <td>{{ demandeurEmploi.profildecol }}</td>
+                <td>{{ demandeurEmploi.nomDe }}</td>
+                <td>{{ demandeurEmploi.prenomDe }}</td>
+                <td>{{ demandeurEmploi.tel1De }}</td>
+                <td>{{ demandeurEmploi.tel2De }}</td>
+                <td>{{ demandeurEmploi.mailDe }}</td>
+                <td>{{ demandeurEmploi.qpv }}</td>
+                <td>{{ demandeurEmploi.nbrEnfantDe }}</td>
+                <td>{{ demandeurEmploi.dateNaissance }}</td>
+                <td>{{ demandeurEmploi.trancheAge }}</td>
+                <td>{{ demandeurEmploi.villeNaissance }}</td>
+                <td>{{ demandeurEmploi.deptNaissance }}</td>
+                <td>{{ demandeurEmploi.paysNaissance }}</td>
+                <td>{{ demandeurEmploi.nationaliteDe }}</td>
+                <td>{% if demandeurEmploi.titreSejourDe %}Yes{% else %}No{% endif %}</td>
+                <td>{% if demandeurEmploi.autorisationTravail %}Yes{% else %}No{% endif %}</td>
+                <td>{{ demandeurEmploi.locomotion }}</td>
+                <td>{{ demandeurEmploi.numPoleEmploiDe }}</td>
+                <td>{{ demandeurEmploi.structureRef }}</td>
+                <td>{{ demandeurEmploi.allocation }}</td>
+                <td>{{ demandeurEmploi.diplomePro }}</td>
+                <td>{{ demandeurEmploi.categorieSocio }}</td>
+                <td>{{ demandeurEmploi.idde }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('demandeurs_edit', { 'id': demandeurEmploi.idde }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demandeurs_new') }}">Create a new demandeurEmploi</a>
+        </li>
+    </ul>
+{% endblock %}

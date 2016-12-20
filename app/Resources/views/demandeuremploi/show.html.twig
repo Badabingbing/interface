@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Demandeuremploi</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Dateinscriptionde</th>
+                <td>{% if demandeurEmploi.dateInscriptionDe %}{{ demandeurEmploi.dateInscriptionDe|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datedernieremodifde</th>
+                <td>{% if demandeurEmploi.dateDerniereModifDe %}{{ demandeurEmploi.dateDerniereModifDe|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Photode</th>
+                <td>{{ demandeurEmploi.photoDe }}</td>
+            </tr>
+            <tr>
+                <th>Profildecol</th>
+                <td>{{ demandeurEmploi.profildecol }}</td>
+            </tr>
+            <tr>
+                <th>Nomde</th>
+                <td>{{ demandeurEmploi.nomDe }}</td>
+            </tr>
+            <tr>
+                <th>Prenomde</th>
+                <td>{{ demandeurEmploi.prenomDe }}</td>
+            </tr>
+            <tr>
+                <th>Tel1de</th>
+                <td>{{ demandeurEmploi.tel1De }}</td>
+            </tr>
+            <tr>
+                <th>Tel2de</th>
+                <td>{{ demandeurEmploi.tel2De }}</td>
+            </tr>
+            <tr>
+                <th>Mailde</th>
+                <td>{{ demandeurEmploi.mailDe }}</td>
+            </tr>
+            <tr>
+                <th>Qpv</th>
+                <td>{{ demandeurEmploi.qpv }}</td>
+            </tr>
+            <tr>
+                <th>Nbrenfantde</th>
+                <td>{{ demandeurEmploi.nbrEnfantDe }}</td>
+            </tr>
+            <tr>
+                <th>Datenaissance</th>
+                <td>{{ demandeurEmploi.dateNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Trancheage</th>
+                <td>{{ demandeurEmploi.trancheAge }}</td>
+            </tr>
+            <tr>
+                <th>Villenaissance</th>
+                <td>{{ demandeurEmploi.villeNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Deptnaissance</th>
+                <td>{{ demandeurEmploi.deptNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Paysnaissance</th>
+                <td>{{ demandeurEmploi.paysNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Nationalitede</th>
+                <td>{{ demandeurEmploi.nationaliteDe }}</td>
+            </tr>
+            <tr>
+                <th>Titresejourde</th>
+                <td>{% if demandeurEmploi.titreSejourDe %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Autorisationtravail</th>
+                <td>{% if demandeurEmploi.autorisationTravail %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Locomotion</th>
+                <td>{{ demandeurEmploi.locomotion }}</td>
+            </tr>
+            <tr>
+                <th>Numpoleemploide</th>
+                <td>{{ demandeurEmploi.numPoleEmploiDe }}</td>
+            </tr>
+            <tr>
+                <th>Structureref</th>
+                <td>{{ demandeurEmploi.structureRef }}</td>
+            </tr>
+            <tr>
+                <th>Allocation</th>
+                <td>{{ demandeurEmploi.allocation }}</td>
+            </tr>
+            <tr>
+                <th>Diplomepro</th>
+                <td>{{ demandeurEmploi.diplomePro }}</td>
+            </tr>
+            <tr>
+                <th>Categoriesocio</th>
+                <td>{{ demandeurEmploi.categorieSocio }}</td>
+            </tr>
+            <tr>
+                <th>Idde</th>
+                <td>{{ demandeurEmploi.idde }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demandeurs_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('demandeurs_edit', { 'id': demandeurEmploi.idde }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
