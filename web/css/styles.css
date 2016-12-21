@@ -1,0 +1,835 @@
+/* ============= Fonts ============ */
+@font-face {
+  font-family: 'GOTHAM';
+  src: url('../fonts/GOTHAM-MEDIUM.OTF');
+}
+
+/*width table mozilla*/
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+/* ========= Colors ========== */
+/*
+
+light :
+couleur des icones light pour le hover
+#fafafa  /  rgb(250,250,250)
+
+Grey :
+couleur des icones du file d'ariane
+#e6e6e6  /  rgb(230,230,230)
+
+Orange:
+orange de la charte graphique
+#ed9767  /  rgb(237,151,103)
+
+black:
+gris foncé pour les boutons et texte
+#4d4a4a   /  rgb(77,74,74)
+
+
+bleue:
+bleu-vert de la charte graphique
+#24888f  /  rgb(36,136,143)
+
+*/
+
+/*.dz-error-mark svg g g {
+	fill: #2E3942;
+}*/
+
+/*.dz-image img:hover {
+	height: 100px;
+}*/
+
+/*
+-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+*/
+
+body{
+	background-image: url(../img/bgBody.png);
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	color: #4d4a4a;
+}
+
+a, a:hover{
+	text-decoration: none;
+	color: #4d4a4a;
+}
+button{
+	border:0;
+}
+.form-control::-moz-placeholder {
+    color: #4d4a4a;
+}
+#uploadFile {
+	border:0!important;
+}
+
+
+.loginBox, .btn-menuPrincipal, .btnPhoto, .btn-valider, 
+.btn-annuler, select, input, .ZDE, .screen {
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+}
+
+textarea{
+	width: 90%;
+}
+/* ===== la class edit =====*/
+
+
+.editable-click, a.editable-click, a.editable-click:hover {
+    text-decoration: none;
+    border-bottom: dashed 1px #ed9767;
+}
+.name_DE {
+    text-transform: uppercase;
+    font-family: 'GOTHAM';
+}
+.editable-unsaved {
+    font-weight: normal;
+    color: #4d4a4a;
+    border-bottom: dashed 1px #4d4a4a;
+
+}
+
+.btn-primary {
+    background-color: #24888f;
+    border-color: #24888f;
+}
+.btn-primary:hover{
+    background-color: #4d4a4a;
+    border-color: #4d4a4a;
+}
+
+
+
+/* ============= Options du Drawer ============ */
+
+.drawer-nav {
+	background-color: rgb(36,136,143);
+	padding: 0 30px;
+	width: auto;
+	background-image: url(../img/bg-nav.png);
+	background-repeat: repeat-x;
+	background-position: center 160px;
+}
+
+
+.drawer-overlay {
+    background-color: rgba(21,21,19,.3);
+}
+
+.drawer-hamburger-icon, .drawer-hamburger-icon::before, .drawer-hamburger-icon::after {
+    background-color: rgb(78,74,75);
+}
+
+
+
+
+/* ============= Menu Navigation ============ */
+
+
+.drawer-nav img {
+	margin-top: 60px;
+	width: 290px;
+}
+
+.userlogin{
+	margin: 50px 0 30px 0;
+	height: 40px;
+	width: 280px;
+	font-family: 'GOTHAM';
+	font-size: 16px;
+	color: white;
+}
+.userlogin span{
+	font-family: 'GOTHAM';
+	font-size: 13px;
+	color: rgb(237,151,103);
+}
+
+.btn-menuPrincipal{
+	height: 60px;
+	width: 280px;
+	background-color: rgb(250,250,250);
+	margin: 20px 0;
+	font-family: 'GOTHAM';
+	font-size: 13.5px;
+	text-transform: uppercase;
+	line-height: 66px;
+	padding-left: 60px;
+	color: rgb(77,74,74);
+	display: block;
+}
+
+.btn-bg1, .btn-bg2, .btn-bg3, .btn-bg4, .btn-bg5{
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-size: 16%;
+}
+
+.btn-bg1{
+	color: white;
+	background-color: rgb(77,74,74);
+	background-image: url(../img/icons/FluxLight.png);
+}
+.btn-bg1:hover{
+	color: rgb(77,74,74)!important;
+	background-color: white!important;
+	background-image: url(../img/icons/FluxOrange.png);
+}
+
+.btn-bg2{
+	background-image: url(../img/icons/emploiOrange.png);
+}
+.btn-bg2:hover{
+	background-image: url(../img/icons/emploiLight.png);
+}
+
+.btn-bg3{
+	background-image: url(../img/icons/rdvOrange.png);
+}
+.btn-bg3:hover{
+	background-image: url(../img/icons/rdvLight.png);
+}
+
+.btn-bg4{
+	background-image: url(../img/icons/logOutOrange.png);
+}
+.btn-bg4:hover{
+	background-image: url(../img/icons/logOutLight.png);
+}
+
+.btn-bg5{
+	background-image: url(../img/icons/entreprises.png);
+}
+.btn-bg5:hover{
+	background-image: url(../img/icons/entreprisesLight.png);
+}
+
+.btn-menuPrincipal:hover{
+	background-color: rgb(77,74,74);
+	font-style: none;
+	color: white;
+}
+
+
+
+
+/* ============= Entete de la Page ============ */
+
+
+.entete, .entetelogin{
+	height: 60px;
+	width: 100%;
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: 99% center;
+	display: inline-block;
+}
+.entete{
+	background-image: url(../img/icons/FluxGrey.png);
+}
+
+.entetelogin{
+	background-image: url(../img/icons/loginGrey.png);
+}
+
+.entete img{
+	width: 220px;
+	margin: 4px 0 0 30px;
+}
+
+.fAriane{
+	color: rgb(230,230,230);
+	font-family: 'GOTHAM';
+	font-size: 18px;
+	text-transform: uppercase;
+	line-height: 24px;
+	text-align: right;
+	float: right;
+	margin-right: 40px;
+}
+
+
+
+/* ============= Page créer un Flux ============ */
+
+.screenCreation{
+	margin-top: 20px;
+}
+
+.titrePage{
+	font-family: 'GOTHAM';
+	font-size: 20px;
+	text-align: left;
+	color: #4d4a4a;
+	text-transform: uppercase;
+	margin: 20px 0;
+}
+
+.inputNewFlux{
+	margin: 0;
+}
+
+.btnAdd{
+	margin: 0;
+	float: right;
+	font-size: 12px;
+	height: 50px;
+	width: 280px;
+	background-color: #ed9767;
+	text-transform: uppercase;
+	line-height: 55px;
+	padding-left: 55px;
+	color: #fff;
+	background-image: url(../img/icons/addDocLight.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	background-size: 10%;
+	margin-bottom: 60px;
+}
+
+
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12,
+.col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5,
+.col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+.col-md-1, .col-md-10, .col-md-11, .col-md-12,
+.col-md-2, .col-md-3, .col-md-4, .col-md-5,
+.col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1,
+.col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2,
+.col-sm-3, .col-sm-4,
+.col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9{
+    padding-left: 0;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+    color: #4d4a4a;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+}
+
+
+
+form h2, form h3{
+	font-size: 18px;
+}
+
+
+
+
+/* ============= Contenu de la Page ============ */
+
+
+.screenCreation{
+	padding:0 0 100px 0;
+}
+
+.titreForm{
+	color:#24888f;
+ 	font-family: 'GOTHAM';
+ 	text-transform: uppercase;
+ 	font-size: 18px;
+ 	padding:0;
+ 	margin-top: 0;
+	margin-bottom: 0;
+}
+label {
+	display: none;
+}
+.btnPhoto{
+	height: 50px;
+	background-color: #ed9767;
+	font-family: 'GOTHAM';
+	font-size: 13.5px;
+	text-transform: uppercase;
+	line-height: 55px;
+	color: #fff;
+	background-image: url(../img/icons/addImageLight.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	background-size: 16%;
+	padding-left: 66px;
+	text-align: left;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.btnPhoto:hover{
+	background-color: rgb(77,74,74);
+}
+
+.btnValider, .btnCancel{
+	height: 60px;
+	font-family: 'GOTHAM';
+	font-size: 18px;
+	text-transform: uppercase;
+	line-height: 65px;
+	padding-left: 160px;
+	text-align: left;
+	margin: 40px 0;
+	background-repeat: no-repeat;
+	background-position: 100px center;
+	background-size: 9%;
+	color: #fff;
+}
+
+.btnValider{
+	background-color: #24888f;
+	background-image: url(../img/icons/validerLight.png);
+
+
+}
+.btnCancel{
+	background-color: rgb(77,74,74);
+	background-image: url(../img/icons/annulerlight.png);
+
+}
+
+.btnValider:hover{
+	background-color: rgb(77,74,74);
+}
+.btnCancel:hover{
+	background-color: #24888f;
+}
+
+
+/* ============= Login ============ */
+
+
+.passForgt{
+	color: rgb(237,151,103)!important;
+	font-size: 12px!important;
+	line-height: 40px;
+	margin-left: 20px;
+	
+}
+
+
+.rowLog{
+    display: flex;
+    justify-content: center;
+}
+
+.loginBox{
+	width: 320px;
+	height: auto;
+	margin-top: 50px;
+	background-color: white;
+	padding: 10px 0;
+}
+
+.loginBox img{
+	width: 280px;
+	margin: 40px 0 20px 20px
+}
+
+.btnLogin{
+	color: white;
+	background-color: rgb(77,74,74);
+	background-image: url(../img/icons/loginLight.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	background-size: 16%;
+	margin: auto;
+	margin-top: 36px;
+}
+
+
+
+
+/* ============= Contenu de la Page ============ */
+/* -------------      floryan      ------------- */
+
+.bg-body {
+	background-image: url(../img/bgBody.png);
+}
+span {
+	font-family: 'GOTHAM';
+}
+.btnleftimg {
+	background-image: url(../img/icons/file.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	background-size: 10%;
+	height: 50px;
+	width: 280px;
+}
+.btnleft {
+	float: left;
+	margin: 1% 5%;
+}
+.btnright {
+	float: right;
+	margin: 2% 5% 0;
+	background-image: url(../img/icons/addDocLight.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	background-size: 10%;
+	height: 30px;
+	width:auto;
+}
+.btnright span {
+	height: 30px;
+	margin-left: 5%;
+	vertical-align: -6px;
+}
+.btnrightimg {
+	background-image: url(../img/icons/back-arrow.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%;
+	margin-left: -10%;
+	height: 30px;
+	width: 30px;
+}
+button {
+	border: none;
+	color: #fafafa;
+	text-decoration: none;
+	padding: 10px 20px 10px 20px;
+	background-color: #ed9767;
+	text-transform: uppercase;
+}
+button:hover {
+	background-color: rgb(77,74,74);
+	font-style: none;
+	color: white;
+}
+.ZDE, .screen{
+	height: auto;
+	margin-top: 20px;
+	margin-bottom: 60px;
+	padding: 2%;
+	background-color: white;
+	overflow: hidden;
+	
+}
+.ZDE p {
+	color: #4d4a4a;
+}
+.profil_DE {
+	margin: 2% auto;
+}
+.name_DE {
+	text-transform: uppercase;
+	font-family: 'GOTHAM';
+	font-size: 20px;
+}
+.action_DE {
+	text-transform: capitalize;
+	font-family: 'GOTHAM';
+}
+.blockfile {
+	margin-top: 12%;
+}
+.titlefile {
+	text-transform: uppercase;
+	font-family: 'GOTHAM';
+	font-size: 20px;
+	text-align: left;
+	color: #24888f;
+	padding: 0;
+	margin: 20px 0;
+}
+.photos {
+	width: 150px;
+	height: 200px;
+	margin-top: 20px;
+	background-color: #e6e6e6;
+}
+.photos p{
+	font-size: 10px;
+}
+.photos img {
+	width: 60px;
+}
+.btnAddfile {
+	background-image: url(../img/icons/addDocLight.png);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	padding: 10px 5px 10px 35px;
+	background-size: 10%;
+	height: 45px;
+	width: 240px;
+}
+#fileinput {
+	color: #4d4a4a;
+	font-size: 10px;
+}
+#fileinput:nth-word(1)  {
+	font-size: 9px;
+}
+
+.CR {
+	margin-top: 4%;
+	margin-bottom: 10px;
+}
+.btnAddmemo {
+	float: right;
+	background-image: url(../img/icons/addDocLight.png);
+	background-position: 15px center;
+	background-repeat: no-repeat;
+	background-color: #24888f;
+	padding: 5px 5px 5px 38px;
+	background-size: 8%;
+	height: 40px;
+	width: 260px;
+}
+.editmemo {
+	float: right;
+	margin-top: -2%;
+	margin-right: 2%;
+}
+.imgmemo,.imgmemo:hover  {
+	background-image: url(../img/icons/file_inverse.png);
+	background-repeat: no-repeat;
+	background-position: 15px center;
+	background-color: white;
+	background-size: 50%;
+}
+.btnmemo {
+	height: 30px;
+	color: #ed9767;
+	margin-left: 5%;
+	vertical-align: -6px;
+}
+.CRE {
+	float: left;
+	margin-bottom: 5px;
+}
+.blockmemo {
+	border-top: 2px solid #e6e6e6;
+	margin-top: 1%;
+}
+.titlememo, .titleresum {
+	text-transform: uppercase;
+	font-family: 'GOTHAM';
+	font-size: 14px;
+	text-align: left;
+	color: #4d4a4a;
+	padding: 0;
+	margin: 20px 0 5px;
+}
+.datememo:after {
+	content: " • ";
+	color: #24888f;
+}
+.blockresum {
+	background-color: white;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: inherit;
+}
+.panel-group .panel-heading + .panel-collapse > .list-group, .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border-top: 0;
+}
+.panel-title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+.resum {
+	padding: 1% 3%;
+}
+.demarche {
+	border-left: 2px solid #e6e6e6;
+}
+.titleresum {
+	color: #24888f;
+	margin-bottom: 2%;
+}
+.textresum {
+	text-align: justify;
+}
+.clear {
+	clear: both;
+}
+
+/* le formulaire */
+.télécharger {
+	float: right;
+}
+.formulaire button {
+	margin-left: 4%;
+}
+.btn-annuler, .btn-valider {
+	height: 60px;
+	font-size: 20px;
+}
+.btn-annuler {
+	background-color: #4d4a4a;
+}
+.btn-valider {
+	background-color: #24888f;
+}
+.btn-annuler:hover, .btn-valider:hover {
+	background-color: #ed9767;
+}
+.form-group {
+	margin-top: 0;
+	margin-bottom: 0; 
+}
+form .col-lg-12, form .col-lg-6,form .col-lg-3 {
+	margin-top: 10px;
+	margin-bottom: 10px; 
+}
+
+/* drope zone custom */
+.dz-filename span {
+	font-size: 9px;
+}
+.dz-error-mark svg, .dz-success-mark svg{
+	height: 20px;
+	width: 20px;
+}
+.dz-clickable{
+	color: #ed9767;
+	border: 1px dashed #4d4a4a;
+	overflow: hidden;
+	width: 60%;
+	min-height: 50px;
+	padding: 10px;
+	vertical-align: center;
+}
+.dz-details{
+	color: #4d4a4a;
+}
+.dropzone .delt{
+	height: 30px;
+	width: 30px;
+}
+.dz-message span{
+	margin-left: 34px;
+	line-height: 50px;
+}
+.dz-message{
+}
+.dz-message{
+	background-image: url(../img/icons/addDocOrange.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size:30px;
+}
+
+
+/* //////// ===== LISTE DEMANDEURS D'EMPLOI ===== //////// */
+
+/* ======== table  ============*/
+.screen{
+	overflow: hidden;
+	padding: 20px 40px 60px 40px;
+}
+#listDE{
+	margin: 40px auto;
+	background-color: white;
+}
+tr {
+	height: 60px;
+}
+tr:nth-child(2n+1){
+	background-color: #fafafa;
+}
+
+tr:last-of-type{
+	border-bottom: 6px solid rgba(230,230,230,0.6);
+}
+
+td, th{
+	padding: 6px 16px;
+	vertical-align: center;
+}
+tr:first-of-type{
+	background-color: #24888f;
+	color: white;
+
+}
+th{
+	border-right: 1px solid rgba(255,255,255,.6);
+	
+}
+
+th:last-of-type{
+	border-right: 0;
+}
+td{
+	border-right: 1px solid rgba(230,230,230,0.6);
+	border-top: 6px solid white;
+}
+
+td:last-of-type{
+	border-right: 0;
+}
+td a{
+	font-family: 'GOTHAM';
+}
+td a:hover{
+	color: #ed9767;
+}
+
+/* pagination */
+
+.pagin{
+	margin: 20px auto;
+}
+.pagination > li > a, .pagination > li > span {
+    padding: 6px 12px;
+    color: #ed9767;
+    height: 60px;
+    width: 60px;
+    line-height: 50px;
+    text-align: center;
+}
+.prevNext span{
+	border: 0;
+	font-size: 40px;
+}
+.prevNext li{
+	border: 0;
+}
+/* ========= Colors ========== */
+/*
+
+light :
+couleur des icones light pour le hover
+#fafafa  /  rgb(250,250,250)
+
+Grey :
+couleur des icones du file d'ariane
+#e6e6e6  /  rgb(230,230,230)
+
+Orange:
+orange de la charte graphique
+#ed9767  /  rgb(237,151,103)
+
+black:
+gris foncé pour les boutons et texte
+#4d4a4a   /  rgb(77,74,74)
+
+
+bleue:
+bleu-vert de la charte graphique
+#24888f  /  rgb(36,136,143)
+
+*/
+
+
+
+
+

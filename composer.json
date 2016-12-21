@@ -1,5 +1,5 @@
 {
-    "name": "apprenant_10/interface",
+    "name": "pc_apprenant_6/test_symfony",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -27,7 +27,8 @@
         "symfony/polyfill-apcu": "^1.0",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-        "incenteev/composer-parameter-handler": "^2.0"
+        "incenteev/composer-parameter-handler": "^2.0",
+        "ibrows/xeditable-bundle": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

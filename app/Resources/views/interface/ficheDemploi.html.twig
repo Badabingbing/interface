@@ -1,0 +1,192 @@
+{% extends "interface/layout.html.twig" %} 
+
+{% block title %}Fiche demandeur d'emploi | {{ parent() }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <!-- zone du demandeur d'emploi -->
+    <div class="ZDE">
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <div class="profil_DE">
+                    <a class="edit name_DE" id="username" data-type="text" data-pk="1" data-url="" data-title="Enter username">nom du demandeur..</a>
+                    <p class="action_DE">action : <a class="edit" id="action" data-type="select" data-pk="1" data-url="" data-title="action" class="selectpicker">Choisir une action</a></p>
+                    <p>Crée le <span>(00-00-0000)</span></p>
+                    <p>Modifié le <span>(00-00-0000)</span></p>
+                </div>
+                <div class="photos">
+                    <p>Photo non disponible</p>
+                    <img src="/img/icons/business.png">
+                </div>
+                <div class="3">
+                    <h3 class="titlefile">Documents</h3>
+                    <p><a href="/doc/demandeurs d'emploi.pdf" target="pdf">Voir le CV</a></p>
+                    <p><a href="/doc/demandeurs d'emploi.pdf" target="pdf">Voir la Lettre de Motivation</a></p>
+                    <!-- Telecharger un document 
+                            <div class="form-group">
+                                <label for="fileinput">Télécharger un document</label>
+                                <input class="col-lg-12" type="file" id="fileinput">
+                            </div>-->
+                    <form class="dropzone" action="/target-url" id="my-dropzone" class="dropzone">
+                        <div class="fallback">
+                            <input name="file" type="file" multiple />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- ==== colone center ==== -->
+            <div class="col-lg-4">
+                <!-- ==== Etat civil ==== -->
+                <div class="3">
+                    <h3 class="titlefile">état civil</h3>
+                    <p>Genre : <span><a class="edit" id="genre" data-type="select" data-pk="1" data-url="" data-title="Genre" class="selectpicker">Choisir une genre</a></span></p>
+                    <p>Trange d'âge : <span><a class="edit" id="tAge" data-type="select" data-pk="1" data-url="" data-title="TranchedAge" class="selectpicker">Choisir une tranche</a></span></p>
+                    <p>Né(e) le : <span><a id="ddn" data-type="combodate" data-pk="1" data-url="" data-value="0000-00-00" data-title="Select date">0000-00-00</a></span></p>
+                    <p>à : <span><a id="country" data-type="select" data-pk="1" data-url="" data-title="Select country">pays de naissance ..</a></span></p>
+                    <p>Nationalité : <span><a id="natio" data-type="select" data-pk="1" data-url="" data-title="Select country">pays de naissance ..</a></span></p>
+                    <p>Titre de séjour : <span>
+                                <a class="edit" id="tSejour" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a>
+                            </span></p>
+                    <p>Autorisation de travail : <span><a class="edit" id="autorTrv" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a></span></p>
+                    <p>Enfant(s) en charge : <span><a class="edit" id="enfants" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a></span></p>
+                </div>
+                <!-- ==== Ressources ==== -->
+                <div class="blockfile">
+                    <h3 class="titlefile">Ressources</h3>
+                    <p>Référent FACE : <span>
+                                <a class="edit"  data-type="text" data-pk="1" data-url="" data-title="Nom du référent..">nom du référent..</a>
+                            </span></p>
+                    <p>ID Pôle Emploi : <span>
+                                <a class="edit"  data-type="text" data-pk="1" data-url="" data-title="ID Pole Emploi..">00 00 00 00</a>
+                            </span></p>
+                    <p>Référent (PE / ML) : <span><a class="edit"  data-type="text" data-pk="1" data-url="" data-title="référent et structure..">Nom du référent / structure</a></span></p>
+                    <p>Allocation : <span>
+                                <a class="edit" id="alloc" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a>
+                            </span></p>
+                    <p>RQTH : <span><a class="edit" id="rqth" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a></span></p>
+                    <p>QPV : <span>
+                                <a class="edit" id="qpv" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a>
+                            </span></p>
+                </div>
+            </div>
+            <!-- ==== colone Right ==== -->
+            <div class="col-lg-4">
+                <!-- ==== Formation et métier ==== -->
+                <div class="3">
+                    <h3 class="titlefile">Formation et métier</h3>
+                    <p>Métier : <span>
+                                <a id="metier" data-type="select" data-pk="1" data-url="" data-title="">Choisir un métier ..</a>
+                            </span></p>
+                    <p>Niveau d'études : <span>
+                                <a class="edit" id="etudes" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a>
+                            </span></p>
+                    <p>Catégorie socio-pro : <span>
+                                <a class="edit" id="socioPro" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a>
+                            </span></p>
+                    <p>Diplôme professionnel : <span>
+                                <a class="edit"  data-type="text" data-pk="1" data-url="" data-title="ID Pole Emploi..">CACE..</a>
+                            </span></p>
+                    <p>Durée d'expérience : <span>
+                            <a class="edit" id="dureeExp" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">Choisir ..</a>
+                            </span></p>
+                    <p>Dernier poste occupé : <span>
+                                <a class="edit"  data-type="text" data-pk="1" data-url="" data-title="lastJob..">poste / entreprise etc..</a>
+                            </span></p>
+                </div>
+                <!-- ==== Mobilité ==== -->
+                <div class="blockfile">
+                    <h3 class="titlefile">Mobilité</h3>
+                    <p>Permis de conduire : <span>
+                                <a id="permis" data-type="checklist" data-pk="1" data-url="" data-title="Select options">Choisir un permis</a>
+                            </span></p>
+                    <p>Moyen de locomotion : <span>
+                                    <a id="locomotion" data-type="checklist" data-value="" data-pk="1" data-url="" data-title="Select options" >Choisir ..</a
+                            </span></p>
+                </div>
+                <!-- ==== Contact ==== -->
+                <div class="blockfile">
+                    <h3 class="titlefile">Contact</h3>
+                    <p>Adresse : <span>
+                                <a class="edit"  data-type="text" data-pk="1" data-url="" data-title="adresse..">Adresse ..</a>
+                            </span></p>
+                    <p>Ville : <span>
+                                <a id="ville" data-type="select" data-pk="1" data-url="" data-title="">Choisir une ville ..</a>
+                            </span></p>
+                    <p>Tél. (fixe) : <span><a class="edit" id="tel" data-type="tel" data-pk="1">00 00 00 00 00</a></span></p>
+                    <p>Tél. (portable) : <span><a class="edit" id="tel" data-type="tel" data-pk="1">00 00 00 00 00</a></span></p>
+                    <p>Mail : <span><a class="edit" id="email" data-type="email" data-pk="1">contact@example.com</a></span></p>
+                </div>
+            </div>
+        </div>
+        <!-- zone compte rendu du demandeur d'emploi -->
+        <div class="col-lg-12 CR">
+            <h3 class="titlefile CRE">compte-rendus des entretiens</h3>
+            <button type="text" id="adRdv" class="btnAddmemo">Ajouter un compte-rendu</button>
+        </div>
+        <div class="clear"></div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default" id="lastRdv">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse01">Rendez-vous 01</a>
+                    </h4>
+                    <p>Rendez-vous du : <span class="datememo">(date)</span>suivi par : <span>(nom référent FACE)</span></p>
+                </div>
+                <div id="collapse01" class="panel-collapse collapse in col-lg-12 blockresum">
+                    <div class="panel-body col-lg-8 resum">
+                        <h3 class="titleresum">Résumé</h3>
+                        <p class="textresum"><a class="resume" data-type="textarea" data-pk="1">
+                                ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                            </a></p>
+                    </div>
+                    <div class="col-lg-4 resum demarche">
+                        <h3 class="titleresum">Démarches à suivre</h3>
+                        <p class="textresum"><a class="resume" data-type="textarea" data-pk="1">
+                                ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                            </a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Rendez-vous 02</a>
+                    </h4>
+                    <p>Rendez-vous du : <span class="datememo">(date)</span>suivi par : <span>(nom référent FACE)</span></p>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse in col-lg-12 blockresum">
+                    <div class="panel-body col-lg-8 resum">
+                        <h3 class="titleresum">Résumé</h3>
+                        <p class="textresum"><a class="resume" data-type="textarea" data-pk="1">
+                                    ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</a></p>
+                    </div>
+                    <div class="col-lg-4 resum demarche">
+                        <h3 class="titleresum">Démarches à suivre</h3>
+                        <p class="textresum"><a class="resume" data-type="textarea" data-pk="1">
+                                    ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Rendez-vous 03</a>
+                    </h4>
+                    <p>Rendez-vous du : <span class="datememo">(date)</span>suivi par : <span>(nom référent FACE)</span></p>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse in col-lg-12 blockresum">
+                    <div class="panel-body col-lg-8 resum">
+                        <h3 class="titleresum">Résumé</h3>
+                        <p class="textresum"><a class="resume" data-type="textarea" data-pk="1">
+                                    ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</a></p>
+                    </div>
+                    <div class="col-lg-4 resum demarche">
+                        <h3 class="titleresum">Démarches à suivre</h3>
+                        <p class="textresum"><a class="resume" data-type="textarea" data-pk="1">
+                                    ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
