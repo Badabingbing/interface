@@ -1,0 +1,21 @@
+{% extends "interface/layout.html.twig" %}
+
+{% block title %}Liste des articles | {{ parent() }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    {% for article in articles %}
+    <article>
+        <header>
+            <h1>Démonstration de l'utilisation {{ article.moteur_templates }}.</h1>
+            <p>{{ article.titre|upper }}</p>
+        </header>
+        <p>Rédigé par {{ article.auteur.nom }} {{ article.auteur.prenom }}, 
+            le {{ article.date|date("m/d/Y") }}</p>
+       
+        
+       
+        <p>{{ article.contenu|raw }}</p>
+    </article>
+    {% endfor %}
+{% endblock %}

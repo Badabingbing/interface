@@ -1,6 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends '::base.html.twig' %}
+
+{% block title %}Ceci est un tuto. | {{ parent() }}{% endblock %}
 
 {% block body %}
+{{ parent() }}
     <div id="wrapper">
         <div id="container">
             <div id="welcome">

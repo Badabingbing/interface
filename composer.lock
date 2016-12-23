@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "20f69402d970e7bc38793ba20e13d0d1",
-    "content-hash": "120907b2b5cfecebacf98b00ef01081e",
+    "hash": "edbbc6a807a4cba5e4ea9c5baa52c16c",
+    "content-hash": "d5fb9b249dbfe2f021d5af05f759a0d6",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -774,6 +774,51 @@
                 "orm"
             ],
             "time": "2016-12-18 15:42:34"
+        },
+        {
+            "name": "ibrows/xeditable-bundle",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibrows/IbrowsXeditableBundle.git",
+                "reference": "dd8727b84fa43800776ee100b33b18a2cf04cd7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibrows/IbrowsXeditableBundle/zipball/dd8727b84fa43800776ee100b33b18a2cf04cd7d",
+                "reference": "dd8727b84fa43800776ee100b33b18a2cf04cd7d",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/symfony": "~3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Ibrows\\XeditableBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Steiner",
+                    "homepage": "https://github.com/ibrows"
+                }
+            ],
+            "description": "bootstrap x-editable symfony2 forms integration",
+            "homepage": "http://www.ibrows.ch",
+            "keywords": [
+                "Symfony2",
+                "XeditableBundle",
+                "bootstrap",
+                "form",
+                "inline-edit",
+                "x-editable"
+            ],
+            "time": "2016-10-04 08:58:46"
         },
         {
             "name": "incenteev/composer-parameter-handler",

@@ -1,0 +1,213 @@
+{% extends "interface/layout.html.twig" %} 
+
+{% block title %}Liste demandeurs d'emploi | {{ parent() }}{% endblock %}
+
+{% block body %}
+		{{ parent() }}
+		<!-- Liste demandeurs d'emploi -->
+    <main>
+    <div class="container-fluid">
+    <div class="row">
+    	<div class="screen col-lg-offset-1 col-lg-10">
+
+    	<h1 class="titrePage col-lg-12 col-md-12">demandeurs d'emploi</h1>
+
+    	<table class="table col-lg-12" id="listDE ">
+		  <tr class="head">
+		    <th>ID Face</th>
+		    <th>Action</th>
+		    <th>Nom</th>
+		    <th>Prénom</th>
+		    <th>Genre</th>
+		    <th>Tél</th>
+		    <th>Email</th>
+		    <th>ID PE</th>
+		    <th>Métier</th>
+		    <th>RQTH</th>
+		    <th>QPV</th>
+		    <th>Permis</th>
+		  </tr>
+
+		  <tr>
+		    <td><a href="{{ path('ficheDemploi', {'id': 1}) }}">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">A.Sentinnelle</a></td>
+		    <td><a href="ficheDemploi.html">Lorem BenIspum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Numérique</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">BenIspum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">A.Sentinnelle</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Flux</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Numérique</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">A.Sentinnelle</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Numérique</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Flux</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Flux</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Numérique</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+		</table> 
+
+		<div class="pagin col-lg-offset-1 col-lg-10">
+			<nav aria-label="Page navigation">
+			    <ul class="pagination pagination-lg">
+				    <li class="prevNext">
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&#139;</span>
+				      </a>
+				    </li>
+					    <li><a href="#">1</a></li>
+					    <li><a href="#">2</a></li>
+					    <li><a href="#">3</a></li>
+					    <li><a href="#">4</a></li>
+					    <li><a href="#">5</a></li>
+					    <li><a href="#">6</a></li>
+					    <li><a href="#">7</a></li>
+					    <li><a href="#">8</a></li>
+					    <li><a href="#">9</a></li>
+				    <li class="prevNext">
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&#155;</span>
+				      </a>
+				    </li>
+			    </ul>
+			</nav>
+		</div>
+
+
+	</div>
+	</div>
+	</div>
+	</main>
+{% endblock %}
