@@ -462,6 +462,14 @@ label {
 span {
 	font-family: 'GOTHAM';
 }
+.filtrelist {
+	border: 1px dashed rgb(77,74,74);;  
+	box-shadow: 0 0 0; 
+	border-color: #ccc;
+	padding: 0.5% 1.5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
 .retourList {
     width: 80%;
     color: #ed9767;
@@ -476,7 +484,7 @@ span {
     background-size: 27px;
     background-position: top center;
 }
-.retourList:hover{
+.retourList:hover {
 	color: #4d4a4a;
 	border: 1px dashed rgb(77,74,74);
 }
