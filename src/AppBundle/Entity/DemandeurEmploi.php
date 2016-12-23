@@ -257,12 +257,6 @@ class DemandeurEmploi
      */
     private $statutstatut;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Document", mappedBy="demandeurdemploi")
-     */
-    private $document;
 
 
     /**
@@ -1145,4 +1139,5 @@ class DemandeurEmploi
     {
         return $this->document;
     }
+
 }
