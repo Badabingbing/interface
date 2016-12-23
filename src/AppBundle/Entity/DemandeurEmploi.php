@@ -1140,8 +1140,4 @@ class DemandeurEmploi
         return $this->document;
     }
 
-     public function __toString()
-   {
-      return strval( $this->getIdde() );
-   }
 }
