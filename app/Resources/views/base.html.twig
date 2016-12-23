@@ -2,12 +2,72 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <title>{% block title %}InterFACE{% endblock %}</title>
+        {% block stylesheets %} 
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/drawer.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/bootstrap-editable.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+        {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body class="drawer drawer--left">
+
+        {% block body %}
+        <header>
+            <button type="button" class="drawer-toggle drawer-hamburger">
+                <span class="sr-only">toggle navigation</span>
+                <span class="drawer-hamburger-icon"></span>
+            </button>
+            <nav class="drawer-nav">
+                <div class="drawer-menu">
+                   <img class="img-responsive logoInterFace" src="/img/logoReserve.png" alt="InterFace : l'application de gestion des flux de FACE" >
+                   <div class="userlogin">Nom et prénom de l'utilisateur<br><span>Chargé(e) de mission</span></div>
+                   <a href="{{ path('demandeurs_index') }}"><div class="btn-menuPrincipal btn-bg1">Demandeurs d'emploi</div></a>
+                   <a href=""><div class="btn-menuPrincipal btn-bg2">Offres d'Emploi</div></a>
+                   <a href=""><div class="btn-menuPrincipal btn-bg5">Entreprises</div></a>
+                   <a href=""><div class="btn-menuPrincipal btn-bg3">Rendez-vous</div></a>
+                   <a href="login.html"><div class="btn-menuPrincipal btn-bg4">Deconnexion</div></a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Zone logo et file d'Ariane -->
+        <div class="entete col-lg-12 col-md-12">
+            <img class="col-lg-4 col-md-4" src="/img/logo.png">
+            <h1 class="fAriane col-lg-offset-5 col-lg-3 col-md-offset-4 col-md-4">demandeurs d'emploi</h1>
+        </div>
+        
+        {% endblock %}
+
+
+
+        {% block javascripts %}
+        <script src="{{ asset('js/jquery-3.1.0.js') }}"></script>
+        <script src="{{ asset('js/dropzone.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/moment.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-editable.min.js') }}"></script>
+        <script src="{{ asset('js/xeditable.js') }}"></script>
+        <script src="{{ asset('js/drawer.js') }}"></script>
+        <script src="{{ asset('js/iscroll.min.js') }}"></script>
+        <script src="{{ asset('js/scripts.js') }}"></script>
+
+        <!-- initialise iscroll -->
+        <script type="text/javascript">
+        var myScroll;
+        function loaded() {
+            myScroll = new IScroll('#wrapper');
+        }
+        </script>
+
+        <!-- initialise drawer -->
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('.drawer').drawer();
+        });
+        </script> 
+        {% endblock %}
     </body>
 </html>

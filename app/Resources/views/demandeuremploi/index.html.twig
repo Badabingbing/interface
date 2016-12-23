@@ -1,87 +1,216 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %} 
+
+{% block title %}Liste demandeurs d'emploi | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Demandeuremplois list</h1>
+		{{ parent() }}
+		<!-- Liste demandeurs d'emploi -->
+    <main>
+    <div class="container-fluid">
+    <div class="row">
+    	<div class="screen col-lg-offset-1 col-lg-10">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Dateinscriptionde</th>
-                <th>Datedernieremodifde</th>
-                <th>Photode</th>
-                <th>Profildecol</th>
-                <th>Nomde</th>
-                <th>Prenomde</th>
-                <th>Tel1de</th>
-                <th>Tel2de</th>
-                <th>Mailde</th>
-                <th>Qpv</th>
-                <th>Nbrenfantde</th>
-                <th>Datenaissance</th>
-                <th>Trancheage</th>
-                <th>Villenaissance</th>
-                <th>Deptnaissance</th>
-                <th>Paysnaissance</th>
-                <th>Nationalitede</th>
-                <th>Titresejourde</th>
-                <th>Autorisationtravail</th>
-                <th>Locomotion</th>
-                <th>Numpoleemploide</th>
-                <th>Structureref</th>
-                <th>Allocation</th>
-                <th>Diplomepro</th>
-                <th>Categoriesocio</th>
-                <th>Idde</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for demandeurEmploi in demandeurEmplois %}
-            <tr>
-                <td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.dateInscriptionDe }}</a></td>
-                <td>{% if demandeurEmploi.dateDerniereModifDe %}{{ demandeurEmploi.dateDerniereModifDe|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ demandeurEmploi.photoDe }}</td>
-                <td>{{ demandeurEmploi.profildecol }}</td>
-                <td>{{ demandeurEmploi.nomDe }}</td>
-                <td>{{ demandeurEmploi.prenomDe }}</td>
-                <td>{{ demandeurEmploi.tel1De }}</td>
-                <td>{{ demandeurEmploi.tel2De }}</td>
-                <td>{{ demandeurEmploi.mailDe }}</td>
-                <td>{{ demandeurEmploi.qpv }}</td>
-                <td>{{ demandeurEmploi.nbrEnfantDe }}</td>
-                <td>{{ demandeurEmploi.dateNaissance }}</td>
-                <td>{{ demandeurEmploi.trancheAge }}</td>
-                <td>{{ demandeurEmploi.villeNaissance }}</td>
-                <td>{{ demandeurEmploi.deptNaissance }}</td>
-                <td>{{ demandeurEmploi.paysNaissance }}</td>
-                <td>{{ demandeurEmploi.nationaliteDe }}</td>
-                <td>{% if demandeurEmploi.titreSejourDe %}Yes{% else %}No{% endif %}</td>
-                <td>{% if demandeurEmploi.autorisationTravail %}Yes{% else %}No{% endif %}</td>
-                <td>{{ demandeurEmploi.locomotion }}</td>
-                <td>{{ demandeurEmploi.numPoleEmploiDe }}</td>
-                <td>{{ demandeurEmploi.structureRef }}</td>
-                <td>{{ demandeurEmploi.allocation }}</td>
-                <td>{{ demandeurEmploi.diplomePro }}</td>
-                <td>{{ demandeurEmploi.categorieSocio }}</td>
-                <td>{{ demandeurEmploi.idde }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('demandeurs_edit', { 'id': demandeurEmploi.idde }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    	<h1 class="titrePage col-lg-12 col-md-12">demandeurs d'emploi</h1>
 
-    <ul>
-        <li>
-            <a href="{{ path('demandeurs_new') }}">Create a new demandeurEmploi</a>
-        </li>
-    </ul>
+    	<table class="table col-lg-12" id="listDE ">
+		  <tr class="head">
+		    <th>ID Face</th>
+		    <th>Action</th>
+		    <th>Nom</th>
+		    <th>Prénom</th>
+		    <th>Genre</th>
+		    <th>Tél</th>
+		    <th>Email</th>
+		    <th>ID PE</th>
+		    <th>Métier</th>
+		    <th>RQTH</th>
+		    <th>QPV</th>
+		    <th>Permis</th>
+		  </tr>
+
+{% for demandeurEmploi in demandeurEmplois %}
+			<tr>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.idde }}</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">A.Sentinnelle</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.nomDe }}</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.prenomDe }}</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">Autre</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.tel1De }}</a></td>
+				<td><a href="mailto:contact@site.com">{{ demandeurEmploi.mailDe }}</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.numPoleEmploiDe }}</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">Assistant(e) de direction</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">Non</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.qpv }}</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.locomotion }}</a></td>
+			</tr>
+{% endfor %}
+
+			{#
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Numérique</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">BenIspum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">A.Sentinnelle</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Flux</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Numérique</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">A.Sentinnelle</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Numérique</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Flux</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Flux</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>
+
+		   <tr>
+		    <td><a href="ficheDemploi.html">AS/00102</a></td>
+		    <td><a href="ficheDemploi.html">Numérique</a></td>
+		    <td><a href="ficheDemploi.html">Lorem Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Ben Ispum</a></td>
+		    <td><a href="ficheDemploi.html">Autre</a></td>
+		    <td><a href="ficheDemploi.html">0102030405</a></td>
+		    <td><a href="mailto:contact@site.com">contact@site.com</a></td>
+		    <td><a href="ficheDemploi.html">35010203</a></td>
+		    <td><a href="ficheDemploi.html">Assistant(e) de direction</a></td>
+		    <td><a href="ficheDemploi.html">Non</a></td>
+		    <td><a href="ficheDemploi.html">Le Blosne</a></td>
+		    <td><a href="ficheDemploi.html">Aucun</a></td>
+		  </tr>#}
+		</table> 
+
+		<div class="pagin col-lg-offset-1 col-lg-10">
+			<nav aria-label="Page navigation">
+			    <ul class="pagination pagination-lg">
+				    <li class="prevNext">
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&#139;</span>
+				      </a>
+				    </li>
+					    <li><a href="#">1</a></li>
+					    <li><a href="#">2</a></li>
+					    <li><a href="#">3</a></li>
+					    <li><a href="#">4</a></li>
+					    <li><a href="#">5</a></li>
+					    <li><a href="#">6</a></li>
+					    <li><a href="#">7</a></li>
+					    <li><a href="#">8</a></li>
+					    <li><a href="#">9</a></li>
+				    <li class="prevNext">
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&#155;</span>
+				      </a>
+				    </li>
+			    </ul>
+			</nav>
+		</div>
+
+
+	</div>
+	</div>
+	</div>
+	</main>
 {% endblock %}
