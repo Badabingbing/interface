@@ -228,7 +228,7 @@ $('#enfants').click(function() {
         $.fn.editable.defaults.mode = 'inline';
             //remote source (advanced)
         $(this).editable({
-                    source: 'js/getCountries.json',
+                    source: '../js/metiers.json',
                     select2: {
                         placeholder: 'Choisir un metier',
                         minimumInputLength: 1
@@ -242,7 +242,7 @@ $('#enfants').click(function() {
         $.fn.editable.defaults.mode = 'inline';
             //remote source (advanced)
         $(this).editable({
-                    source: 'js/getCountries.json',
+                    source: '../js/getCountries.json',
                     select2: {
                         placeholder: 'Choisir une ville',
                         minimumInputLength: 1
@@ -256,9 +256,9 @@ $('#enfants').click(function() {
         $.fn.editable.defaults.mode = 'inline';
             //remote source (advanced)
         $(this).editable({
-                    source: 'js/getCountries.json',
+                    source: '../js/getCountries.json',
                     select2: {
-                        placeholder: 'Select Country',
+                        placeholder: 'Choisir un pays',
                         minimumInputLength: 1
                     }
   
@@ -290,9 +290,9 @@ $('#enfants').click(function() {
         $.fn.editable.defaults.mode = 'inline';
             //remote source (advanced)
         $(this).editable({
-                    source: 'js/getCountries.json',
+                    source: '../js/getCountries.json',
                     select2: {
-                        placeholder: 'Select Country',
+                        placeholder: 'Choisir une nationalité',
                         minimumInputLength: 1
                     }
   
