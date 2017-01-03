@@ -63,4 +63,9 @@ class Niveauetude
     {
         return $this->idniveauetude;
     }
+
+    public function __toString()
+   {
+      return strval( $this->getIdniveauetude() );
+   }
 }

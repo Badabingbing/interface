@@ -13,6 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class DemandeurEmploi
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="action", type="string", length=75, nullable=true)
+     */
+    private $action;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_inscription_DE", type="date", nullable=true)
@@ -132,16 +139,16 @@ class DemandeurEmploi
     private $nationaliteDe;
 
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="titre_sejour_DE", type="boolean", nullable=true)
+     * @ORM\Column(name="titre_sejour_DE", type="string", nullable=true)
      */
     private $titreSejourDe;
 
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="autorisation_travail", type="boolean", nullable=true)
+     * @ORM\Column(name="autorisation_travail", type="string", nullable=true)
      */
     private $autorisationTravail;
 
@@ -183,7 +190,7 @@ class DemandeurEmploi
     /**
      * @var string
      *
-     * @ORM\Column(name="categorie_socio", type="string", length=45, nullable=true)
+     * @ORM\Column(name="categorie_socio", type="string", nullable=true)
      */
     private $categorieSocio;
 
@@ -197,16 +204,6 @@ class DemandeurEmploi
     private $idde;
 
     /**
-     * @var \AppBundle\Entity\Rqth
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
-     * })
-     */
-    private $rqthrqth;
-
-    /**
      * @var \AppBundle\Entity\Adresse
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Adresse")
@@ -217,16 +214,6 @@ class DemandeurEmploi
     private $adresseadresse;
 
     /**
-     * @var \AppBundle\Entity\Genre
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Genre")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="GENRE_idGENRE", referencedColumnName="idGENRE")
-     * })
-     */
-    private $genregenre;
-
-    /**
      * @var \AppBundle\Entity\Metier
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Metier")
@@ -235,6 +222,16 @@ class DemandeurEmploi
      * })
      */
     private $metiermetier;
+
+    /**
+     * @var \AppBundle\Entity\Genre
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Genre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="GENRE_idGENRE", referencedColumnName="idGENRE")
+     * })
+     */
+    private $genregenre;
 
     /**
      * @var \AppBundle\Entity\Niveauetude
@@ -255,6 +252,16 @@ class DemandeurEmploi
      * })
      */
     private $statutstatut;
+
+    /**
+     * @var \AppBundle\Entity\Rqth
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
+     * })
+     */
+    private $rqthrqth;
 
     /**
      * @var \Doctrine\Common\Collections\Collection

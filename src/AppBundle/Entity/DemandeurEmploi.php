@@ -3,7 +3,9 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+//use AppBundle\DBAL\Types\CategorieType;
+use AppBundle\DBAL\Types\SejourType;
+use Fresh\DoctrineEnumBundle\Validator\Constraints as DoctrineAssert;
 
 /**
  * DemandeurEmploi
@@ -14,179 +16,187 @@ use Doctrine\Common\Collections\ArrayCollection;
 class DemandeurEmploi
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="action", type="string", length=75, nullable=true)
+     */
+    protected $action;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_inscription_DE", type="date", nullable=true)
      */
-    private $dateInscriptionDe;
+    protected $dateInscriptionDe;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_derniere_modif_DE", type="datetime", nullable=true)
      */
-    private $dateDerniereModifDe;
+    protected $dateDerniereModifDe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="photo_DE", type="string", length=255, nullable=true)
      */
-    private $photoDe;
+    protected $photoDe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="profilDEcol", type="string", length=45, nullable=true)
      */
-    private $profildecol;
+    protected $profildecol;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom_DE", type="string", length=100, nullable=false)
      */
-    private $nomDe;
+    protected $nomDe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenom_DE", type="string", length=100, nullable=false)
      */
-    private $prenomDe;
+    protected $prenomDe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="tel1_DE", type="string", length=10, nullable=false)
      */
-    private $tel1De;
+    protected $tel1De;
 
     /**
      * @var string
      *
      * @ORM\Column(name="tel2_DE", type="string", length=10, nullable=true)
      */
-    private $tel2De;
+    protected $tel2De;
 
     /**
      * @var string
      *
      * @ORM\Column(name="mail_DE", type="string", length=100, nullable=true)
      */
-    private $mailDe;
+    protected $mailDe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="qpv", type="string", length=45, nullable=true)
      */
-    private $qpv;
+    protected $qpv;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="nbr_enfant_DE", type="integer", nullable=true)
      */
-    private $nbrEnfantDe;
+    protected $nbrEnfantDe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="date_naissance", type="string", length=45, nullable=true)
      */
-    private $dateNaissance;
+    protected $dateNaissance;
 
     /**
      * @var string
      *
      * @ORM\Column(name="tranche_age", type="string", length=50, nullable=true)
      */
-    private $trancheAge;
+    protected $trancheAge;
 
     /**
      * @var string
      *
      * @ORM\Column(name="ville_naissance", type="string", length=50, nullable=true)
      */
-    private $villeNaissance;
+    protected $villeNaissance;
 
     /**
      * @var string
      *
      * @ORM\Column(name="dept_naissance", type="string", length=15, nullable=true)
      */
-    private $deptNaissance;
+    protected $deptNaissance;
 
     /**
      * @var string
      *
      * @ORM\Column(name="pays_naissance", type="string", length=50, nullable=true)
      */
-    private $paysNaissance;
+    protected $paysNaissance;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nationalite_DE", type="string", length=50, nullable=true)
      */
-    private $nationaliteDe;
+    protected $nationaliteDe;
 
     /**
-     * @var boolean
      *
-     * @ORM\Column(name="titre_sejour_DE", type="boolean", nullable=true)
+     * @ORM\Column(name="categorie_socio", type="CategorieType", nullable=true)
+     * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\CategorieType")
      */
-    private $titreSejourDe;
+    protected $categorieSocio;
 
     /**
-     * @var boolean
      *
-     * @ORM\Column(name="autorisation_travail", type="boolean", nullable=true)
+     * @ORM\Column(name="autorisation_travail", type="SejourType", nullable=true)
+     * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\SejourType")
      */
-    private $autorisationTravail;
+    protected $autorisationTravail;
+    
+    /**
+     *
+     * @ORM\Column(name="titre_sejour_DE", type="SejourType", nullable=true)
+     * @DoctrineAssert\Enum(entity="AppBundle\DBAL\Types\SejourType")
+     */
+    protected $titreSejourDe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="locomotion", type="string", length=45, nullable=true)
      */
-    private $locomotion;
+    protected $locomotion;
 
     /**
      * @var string
      *
      * @ORM\Column(name="num_pole_emploi_DE", type="string", length=8, nullable=true)
      */
-    private $numPoleEmploiDe;
+    protected $numPoleEmploiDe;
 
     /**
      * @var string
      *
      * @ORM\Column(name="structure_ref", type="string", length=45, nullable=true)
      */
-    private $structureRef;
+    protected $structureRef;
 
     /**
      * @var string
      *
      * @ORM\Column(name="allocation", type="string", length=45, nullable=true)
      */
-    private $allocation;
+    protected $allocation;
 
     /**
      * @var string
      *
      * @ORM\Column(name="diplome_pro", type="string", length=45, nullable=true)
      */
-    private $diplomePro;
+    protected $diplomePro;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="categorie_socio", type="string", length=45, nullable=true)
-     */
-    private $categorieSocio;
 
     /**
      * @var integer
@@ -195,17 +205,7 @@ class DemandeurEmploi
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idde;
-
-    /**
-     * @var \AppBundle\Entity\Rqth
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
-     * })
-     */
-    private $rqthrqth;
+    protected $idde;
 
     /**
      * @var \AppBundle\Entity\Adresse
@@ -215,17 +215,7 @@ class DemandeurEmploi
      *   @ORM\JoinColumn(name="ADRESSE_idAdresse", referencedColumnName="idAdresse")
      * })
      */
-    private $adresseadresse;
-
-    /**
-     * @var \AppBundle\Entity\Genre
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Genre")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="GENRE_idGENRE", referencedColumnName="idGENRE")
-     * })
-     */
-    private $genregenre;
+    protected $adresseadresse;
 
     /**
      * @var \AppBundle\Entity\Metier
@@ -235,7 +225,17 @@ class DemandeurEmploi
      *   @ORM\JoinColumn(name="METIER_idMETIER", referencedColumnName="idMETIER")
      * })
      */
-    private $metiermetier;
+    protected $metiermetier;
+
+    /**
+     * @var \AppBundle\Entity\Genre
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Genre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="GENRE_idGENRE", referencedColumnName="idGENRE")
+     * })
+     */
+    protected $genregenre;
 
     /**
      * @var \AppBundle\Entity\Niveauetude
@@ -245,7 +245,7 @@ class DemandeurEmploi
      *   @ORM\JoinColumn(name="NIVEAUETUDE_idNiveauEtude1", referencedColumnName="idNiveauEtude")
      * })
      */
-    private $niveauetudeniveauetude1;
+    protected $niveauetudeniveauetude1;
 
     /**
      * @var \AppBundle\Entity\Statut
@@ -255,23 +255,31 @@ class DemandeurEmploi
      *   @ORM\JoinColumn(name="STATUT_idStatut", referencedColumnName="idStatut")
      * })
      */
-    private $statutstatut;
+    protected $statutstatut;
 
-
+    /**
+     * @var \AppBundle\Entity\Rqth
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
+     * })
+     */
+    protected $rqthrqth;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Permis", mappedBy="demandeurdemploide")
      */
-    private $permispermis;
+    protected $permispermis;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", mappedBy="demandeurdemploide")
      */
-    private $useruser;
+    protected $useruser;
 
     /**
      * Constructor
@@ -280,9 +288,32 @@ class DemandeurEmploi
     {
         $this->permispermis = new \Doctrine\Common\Collections\ArrayCollection();
         $this->useruser = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->document = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Set action
+     *
+     * @param string $action
+     *
+     * @return DemandeurEmploi
+     */
+    public function setAction($action)
+    {
+        $this->action = $action;
+
+        return $this;
+    }
+
+    /**
+     * Get action
+     *
+     * @return string
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
 
     /**
      * Set dateInscriptionDe
@@ -695,7 +726,7 @@ class DemandeurEmploi
     /**
      * Set titreSejourDe
      *
-     * @param boolean $titreSejourDe
+     * @param string $titreSejourDe
      *
      * @return DemandeurEmploi
      */
@@ -709,7 +740,7 @@ class DemandeurEmploi
     /**
      * Get titreSejourDe
      *
-     * @return boolean
+     * @return string
      */
     public function getTitreSejourDe()
     {
@@ -719,7 +750,7 @@ class DemandeurEmploi
     /**
      * Set autorisationTravail
      *
-     * @param boolean $autorisationTravail
+     * @param string $autorisationTravail
      *
      * @return DemandeurEmploi
      */
@@ -733,7 +764,7 @@ class DemandeurEmploi
     /**
      * Get autorisationTravail
      *
-     * @return boolean
+     * @return string
      */
     public function getAutorisationTravail()
     {
@@ -895,30 +926,6 @@ class DemandeurEmploi
     }
 
     /**
-     * Set rqthrqth
-     *
-     * @param \AppBundle\Entity\Rqth $rqthrqth
-     *
-     * @return DemandeurEmploi
-     */
-    public function setRqthrqth(\AppBundle\Entity\Rqth $rqthrqth = null)
-    {
-        $this->rqthrqth = $rqthrqth;
-
-        return $this;
-    }
-
-    /**
-     * Get rqthrqth
-     *
-     * @return \AppBundle\Entity\Rqth
-     */
-    public function getRqthrqth()
-    {
-        return $this->rqthrqth;
-    }
-
-    /**
      * Set adresseadresse
      *
      * @param \AppBundle\Entity\Adresse $adresseadresse
@@ -943,30 +950,6 @@ class DemandeurEmploi
     }
 
     /**
-     * Set genregenre
-     *
-     * @param \AppBundle\Entity\Genre $genregenre
-     *
-     * @return DemandeurEmploi
-     */
-    public function setGenregenre(\AppBundle\Entity\Genre $genregenre = null)
-    {
-        $this->genregenre = $genregenre;
-
-        return $this;
-    }
-
-    /**
-     * Get genregenre
-     *
-     * @return \AppBundle\Entity\Genre
-     */
-    public function getGenregenre()
-    {
-        return $this->genregenre;
-    }
-
-    /**
      * Set metiermetier
      *
      * @param \AppBundle\Entity\Metier $metiermetier
@@ -988,6 +971,30 @@ class DemandeurEmploi
     public function getMetiermetier()
     {
         return $this->metiermetier;
+    }
+
+    /**
+     * Set genregenre
+     *
+     * @param \AppBundle\Entity\Genre $genregenre
+     *
+     * @return DemandeurEmploi
+     */
+    public function setGenregenre(\AppBundle\Entity\Genre $genregenre = null)
+    {
+        $this->genregenre = $genregenre;
+
+        return $this;
+    }
+
+    /**
+     * Get genregenre
+     *
+     * @return \AppBundle\Entity\Genre
+     */
+    public function getGenregenre()
+    {
+        return $this->genregenre;
     }
 
     /**
@@ -1036,6 +1043,30 @@ class DemandeurEmploi
     public function getStatutstatut()
     {
         return $this->statutstatut;
+    }
+
+    /**
+     * Set rqthrqth
+     *
+     * @param \AppBundle\Entity\Rqth $rqthrqth
+     *
+     * @return DemandeurEmploi
+     */
+    public function setRqthrqth(\AppBundle\Entity\Rqth $rqthrqth = null)
+    {
+        $this->rqthrqth = $rqthrqth;
+
+        return $this;
+    }
+
+    /**
+     * Get rqthrqth
+     *
+     * @return \AppBundle\Entity\Rqth
+     */
+    public function getRqthrqth()
+    {
+        return $this->rqthrqth;
     }
 
     /**
@@ -1105,39 +1136,4 @@ class DemandeurEmploi
     {
         return $this->useruser;
     }
-
-    /**
-     * Add document
-     *
-     * @param \AppBundle\Entity\Document $document
-     *
-     * @return DemandeurEmploi
-     */
-    public function addDocument(\AppBundle\Entity\Document $document)
-    {
-        $this->document[] = $document;
-
-        return $this;
-    }
-
-    /**
-     * Remove document
-     *
-     * @param \AppBundle\Entity\Document $document
-     */
-    public function removeDocument(\AppBundle\Entity\Document $document)
-    {
-        $this->document->removeElement($document);
-    }
-
-    /**
-     * Get document
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getDocument()
-    {
-        return $this->document;
-    }
-
 }

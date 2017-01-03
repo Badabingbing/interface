@@ -17,7 +17,7 @@ class Permis
      *
      * @ORM\Column(name="permis", type="string", length=10, nullable=true)
      */
-    protected $permis;
+    private $permis;
 
     /**
      * @var integer
@@ -26,14 +26,14 @@ class Permis
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    protected $idpermis;
+    private $idpermis;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Offredemploi", mappedBy="permispermis")
      */
-    protected $offredemploioe;
+    private $offredemploioe;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -48,7 +48,7 @@ class Permis
      *   }
      * )
      */
-    protected $demandeurdemploide;
+    private $demandeurdemploide;
 
     /**
      * Constructor
@@ -162,7 +162,7 @@ class Permis
         return $this->demandeurdemploide;
     }
 
-     public function __toString()
+    public function __toString()
    {
       return strval( $this->getIdpermis() );
    }

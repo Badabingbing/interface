@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Rqth
 {
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="RQTH", type="boolean", nullable=true)
+     * @ORM\Column(name="RQTH", type="string", length=3, nullable=true)
      */
     private $rqth;
 
@@ -33,7 +33,7 @@ class Rqth
     /**
      * Set rqth
      *
-     * @param boolean $rqth
+     * @param string $rqth
      *
      * @return Rqth
      */
@@ -47,7 +47,7 @@ class Rqth
     /**
      * Get rqth
      *
-     * @return boolean
+     * @return string
      */
     public function getRqth()
     {
@@ -63,4 +63,10 @@ class Rqth
     {
         return $this->idrqth;
     }
+    
+    public function __toString()
+   {
+      return strval( $this->getIdrqth() );
+   }
+
 }
