@@ -13,54 +13,57 @@
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>				
 			</div>
 			<div class="col-lg-12">	
-				<select type="button" title="Métier" class="selectpicker">
+				<select type="button" title="Métier" class="selectpicker" id="metier">
 					<option value="A">A</option>
 					<option value="B">B</option>
 					<option value="C">C</option>
 					<option value="D">D</option>
 				</select>
 				<select type="button" title="RQTH" class="selectpicker">
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
-					<option value="D">D</option>
+					<option value="A">oui</option>
+					<option value="B">non</option>
 				</select>
 				<select type="button" title="Quartier" class="selectpicker">
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
-					<option value="D">D</option>
+					<option value="A">Aucun</option>
+					<option value="B">Cleunay</option>
+					<option value="C">Le Blosne</option>
+					<option value="D">Les Cloteaux/Champs Manceaux</option>
+					<option value="D">Maurepas</option>
+					<option value="D">Villejean</option>
 				</select>
 				<select type="button" title="Permis" class="selectpicker">
 					<option value="A">A</option>
 					<option value="B">B</option>
 					<option value="C">C</option>
 					<option value="D">D</option>
+					<option value="D">E</option>
+					<option value="D">BEA</option>
 				</select>
 				<select type="button" title="Genre" class="selectpicker">
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
-					<option value="D">D</option>
+					<option value="A">Autre</option>
+					<option value="B">Femme</option>
+					<option value="C">Homme</option>
 				</select>
 				<select type="button" title="Tranche d'âge" class="selectpicker">
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
-					<option value="D">D</option>
+					<option value="A">Moins de 25 ans</option>
+					<option value="B">Entre 25 et 49 ans</option>
+					<option value="C">50 ans et plus</option>
 				</select>
 				<select type="button" title="Référent" class="selectpicker">
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
-					<option value="D">D</option>
+					<option value="A">Sfia AGOUJIL</option>
+					<option value="C">Malika AIT HAMMAD</option>
+					<option value="B">Christine KERVENNIC</option>
+					<option value="D">Mustapha LAABID</option>
+					<option value="E">Daïna RIVERAIN</option>
 				</select>
 			</div>
 		</div>
     <div class="row">
     	<div class="screen col-lg-offset-1 col-lg-10">
-
-    	<h1 class="titrePage col-lg-12 col-md-12">demandeurs d'emploi</h1>
+			<div class="col-lg-12 col-md-12">				
+				<h1 class="titrePage col-lg-9 col-md-9">demandeurs d'emploi</h1>
+				<a href="{{ path('demandeurs_new') }}"><button type="button" class="col-lg-3 btn">Ajouter un demandeur</button></a>
+			</div>
 
     	<table class="table col-lg-12" id="listDE ">
 		  <tr class="head">
