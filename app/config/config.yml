@@ -56,6 +56,9 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #     path:     "%database_path%"
+        types:
+         SejourType: AppBundle\DBAL\Types\SejourType
+         CategorieType: AppBundle\DBAL\Types\CategorieType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
