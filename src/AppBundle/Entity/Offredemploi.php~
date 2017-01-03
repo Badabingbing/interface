@@ -119,16 +119,6 @@ class Offredemploi
     private $niveauetudeniveauetude;
 
     /**
-     * @var \AppBundle\Entity\Rqth
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
-     * })
-     */
-    private $rqthrqth;
-
-    /**
      * @var \AppBundle\Entity\Statut
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Statut")
@@ -137,6 +127,16 @@ class Offredemploi
      * })
      */
     private $statutstatut;
+
+    /**
+     * @var \AppBundle\Entity\Rqth
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
+     * })
+     */
+    private $rqthrqth;
 
     /**
      * @var \Doctrine\Common\Collections\Collection

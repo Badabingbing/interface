@@ -119,16 +119,6 @@ class Offredemploi
     private $niveauetudeniveauetude;
 
     /**
-     * @var \AppBundle\Entity\Rqth
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
-     * })
-     */
-    private $rqthrqth;
-
-    /**
      * @var \AppBundle\Entity\Statut
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Statut")
@@ -137,6 +127,16 @@ class Offredemploi
      * })
      */
     private $statutstatut;
+
+    /**
+     * @var \AppBundle\Entity\Rqth
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Rqth")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="RQTH_idRQTH", referencedColumnName="idRQTH")
+     * })
+     */
+    private $rqthrqth;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -493,30 +493,6 @@ class Offredemploi
     }
 
     /**
-     * Set rqthrqth
-     *
-     * @param \AppBundle\Entity\Rqth $rqthrqth
-     *
-     * @return Offredemploi
-     */
-    public function setRqthrqth(\AppBundle\Entity\Rqth $rqthrqth = null)
-    {
-        $this->rqthrqth = $rqthrqth;
-
-        return $this;
-    }
-
-    /**
-     * Get rqthrqth
-     *
-     * @return \AppBundle\Entity\Rqth
-     */
-    public function getRqthrqth()
-    {
-        return $this->rqthrqth;
-    }
-
-    /**
      * Set statutstatut
      *
      * @param \AppBundle\Entity\Statut $statutstatut
@@ -538,6 +514,30 @@ class Offredemploi
     public function getStatutstatut()
     {
         return $this->statutstatut;
+    }
+
+    /**
+     * Set rqthrqth
+     *
+     * @param \AppBundle\Entity\Rqth $rqthrqth
+     *
+     * @return Offredemploi
+     */
+    public function setRqthrqth(\AppBundle\Entity\Rqth $rqthrqth = null)
+    {
+        $this->rqthrqth = $rqthrqth;
+
+        return $this;
+    }
+
+    /**
+     * Get rqthrqth
+     *
+     * @return \AppBundle\Entity\Rqth
+     */
+    public function getRqthrqth()
+    {
+        return $this->rqthrqth;
     }
 
     /**

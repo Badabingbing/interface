@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Rqth
 {
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="RQTH", type="boolean", nullable=true)
+     * @ORM\Column(name="RQTH", type="string", length=3, nullable=true)
      */
     private $rqth;
 

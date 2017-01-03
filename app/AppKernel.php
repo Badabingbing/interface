@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Ibrows\XeditableBundle\IbrowsXeditableBundle(),
+            new Fresh\DoctrineEnumBundle\FreshDoctrineEnumBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

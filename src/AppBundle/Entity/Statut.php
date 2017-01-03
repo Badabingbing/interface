@@ -13,9 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Statut
 {
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="statut", type="boolean", nullable=true)
+     * @ORM\Column(name="statut", type="string", length=7, nullable=true)
      */
     private $statut;
 
@@ -33,7 +33,7 @@ class Statut
     /**
      * Set statut
      *
-     * @param boolean $statut
+     * @param string $statut
      *
      * @return Statut
      */
@@ -47,7 +47,7 @@ class Statut
     /**
      * Get statut
      *
-     * @return boolean
+     * @return string
      */
     public function getStatut()
     {
@@ -63,4 +63,9 @@ class Statut
     {
         return $this->idstatut;
     }
+
+    public function __toString()
+   {
+      return strval( $this->getIdstatut() );
+   }
 }
