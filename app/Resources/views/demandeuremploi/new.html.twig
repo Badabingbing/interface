@@ -441,7 +441,6 @@
 
                     <!--photo-->
 
-
                     <!-- Telecharger un document-->
                    <!-- <div class="form-group">
                         <label for="uploadFile">Télécharger un document</label>
@@ -615,7 +614,7 @@
                   <div class="col-lg-12 formulaire">
                     <!--Annuler-->
                     <div class="col-lg-6">
-                        <button type="button" class="col-lg-11 btn-annuler">ANNULER</button>
+                        <a href="{{ path('demandeurs_index') }}"><button type="button" class="col-lg-11 btn-annuler">ANNULER</button></a>
                     </div>
 
                     <!--Valider-->
@@ -632,7 +631,7 @@
             </div>
 
     
-    {{ form_start(form) }}
+    {#{{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
@@ -641,5 +640,5 @@
         <li>
             <a href="{{ path('demandeurs_index') }}">Back to the list</a>
         </li>
-    </ul>
+    </ul>#}
 {% endblock %}
