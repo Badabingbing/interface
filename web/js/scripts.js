@@ -99,7 +99,7 @@ $('#enfants').click(function() {
     $('#rqth').click(function() {
         $.fn.editable.defaults.mode = 'inline';
         $(this).editable({
-                value: 0,    
+                value: 1,    
                 source: [
                       {value: 1, text: 'Non'},
                       {value: 2, text: 'Oui'}
@@ -168,22 +168,29 @@ $('#enfants').click(function() {
             ]
         });
 
-    });
+      });
 
 
-     $('#permis').click(function() {
+      $('#permis').click(function() {
+        
+        $(this).replaceWith('<select id="#permiSelect" class="selectpicker" multiple title="Permis.."><option>Annonceur Sentinelle</option><option>Flux</option><option>IRVIN</option><option>Numérique</option><option>Securité</option></select>');
         $.fn.editable.defaults.mode = 'inline';
-        $(this).editable({
-            value: [0,0],    
-            source: [
-                  {value: 1, text: '0'},
-                  {value: 2, text: '-1 ans'},
-                  {value: 3, text: 'entre 2 et 4 ans'},
-                  {value: 4, text: '5 ans et plus '}
-            ]
+        $('#permiSelect').editable();
         });
 
-    });
+      $('#permis').click(function() {
+          $.fn.editable.defaults.mode = 'inline';
+          $(this).editable({
+              value: [0,0],    
+              source: [
+                    {value: 1, text: '0'},
+                    {value: 2, text: '-1 ans'},
+                    {value: 3, text: 'entre 2 et 4 ans'},
+                    {value: 4, text: '5 ans et plus '}
+              ]
+          });
+
+      });
 
 
 
