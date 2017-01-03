@@ -54,16 +54,23 @@
                 <!-- ==== Etat civil ==== -->
                 <div class="3">
                     <h3 class="titlefile">état civil</h3>
-                    <p>Genre : <span><a class="edit" id="genre" data-type="select" data-pk="1" data-url="" data-title="Genre" class="selectpicker">Choisir une genre</a></span></p>
-                    <p>Tranche d'âge : <span><a class="edit" id="tAge" data-type="select" data-pk="1" data-url="" data-title="TranchedAge" class="selectpicker">...{{ demandeurEmploi.trancheAge }}</a></span></p>
-                    <p>Né(e) le : <span><a id="ddn" data-type="combodate" data-pk="1" data-url="" data-value="0000-00-00" data-title="Select date">...{{ demandeurEmploi.dateNaissance }}</a></span></p>
-                    <p>à : <span><a id="country" data-type="select" data-pk="1" data-url="" data-title="Select country">...{{ demandeurEmploi.villeNaissance }}</a></span></p>
-                    <p>Nationalité : <span><a id="natio" data-type="select" data-pk="1" data-url="" data-title="Select country">...{{ demandeurEmploi.nationaliteDe }}</a></span></p>
+                    <p>Genre : <span>
+                        <a class="edit" id="genre" data-type="select" data-pk="1" data-url="" data-title="Genre" class="selectpicker">Choisir une genre</a></span></p>
+                    <p>Tranche d'âge : <span>
+                        <a class="edit" id="tAge" data-type="select" data-pk="1" data-url="" data-title="TranchedAge" class="selectpicker">...{{ demandeurEmploi.trancheAge }}</a></span></p>
+                    <p>Né(e) le : <span>
+                        <a id="ddn" data-type="combodate" data-pk="1" data-url="" data-value="0000-00-00" data-title="Select date">...{{ demandeurEmploi.dateNaissance }}</a></span></p>
+                    <p>à : <span>
+                        <a id="country" data-type="select" data-pk="1" data-url="" data-title="Select country">...{{ demandeurEmploi.villeNaissance }}</a></span></p>
+                    <p>Nationalité : <span>
+                        <a id="natio" data-type="select" data-pk="1" data-url="" data-title="Select country">...{{ demandeurEmploi.nationaliteDe }}</a></span></p>
                     <p>Titre de séjour : <span>
                         <a class="edit" id="tSejour" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">...{{ demandeurEmploi.titreSejourDe }}</a>
                     </span></p>
-                    <p>Autorisation de travail : <span><a class="edit" id="autorTrv" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">...{{ demandeurEmploi.autorisationTravail }}</a></span></p>
-                    <p>Enfant(s) en charge : <span><a class="edit" id="enfants" data-type="number" data-pk="1" data-url="" data-title="" class="selectpicker">...{{ demandeurEmploi.nbrEnfantDe }}</a></span></p>
+                    <p>Autorisation de travail : <span>
+                        <a class="edit" id="autorTrv" data-type="select" data-pk="1" data-url="" data-title="" class="selectpicker">...{{ demandeurEmploi.autorisationTravail }}</a></span></p>
+                    <p>Enfant(s) en charge : <span>
+                        <a class="edit" id="enfants" data-type="number" data-pk="1" data-url="" data-title="" class="selectpicker">...{{ demandeurEmploi.nbrEnfantDe }}</a></span></p>
                 </div>
 
                 <!-- ==== Ressources ==== -->
@@ -134,9 +141,12 @@
                     <p>Ville : <span>
                         <a id="ville" data-type="select" data-pk="1" data-url="" data-title="">Choisir une ville ..</a>
                     </span></p>
-                    <p>Tél. (fixe) : <span><a class="edit" id="tel" data-type="tel" data-pk="1">...{{ demandeurEmploi.tel1De }}</a></span></p>
-                    <p>Tél. (portable) : <span><a class="edit" id="tel" data-type="tel" data-pk="1">...{{ demandeurEmploi.tel2De }}</a></span></p>
-                    <p>Mail : <span><a class="edit" id="email" data-type="email" data-pk="1">{{ demandeurEmploi.mailDe }}</a></span></p>
+                    <p>Tél. (fixe) : <span>
+                        <a class="edit" id="tel" data-type="tel" data-pk="1">{{ demandeurEmploi.tel1De }}...</a></span></p>
+                    <p>Tél. (portable) : <span>
+                        <a class="edit" id="tel" data-type="tel" data-pk="1">{{ demandeurEmploi.tel2De }}...</a></span></p>
+                    <p>Mail : <span>
+                        <a class="edit" id="email" data-type="email" data-pk="1">{{ demandeurEmploi.mailDe }}</a></span></p>
                 </div>
             </div>
 
