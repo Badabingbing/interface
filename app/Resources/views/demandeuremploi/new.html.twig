@@ -438,7 +438,7 @@
                     <div class="form-group col-lg-6 col-md-6">
                         {{ form_label(form.tel1De) }}
                         {{ form_errors(form.tel1De) }}
-                        {{ form_widget(form.tel1De, {'attr' : {'placeholder' : 'Téléphone mobile ..'}}) }}
+                        {{ form_widget(form.tel1De, {'attr' : {'placeholder' : 'telephone1 ..'}}) }}
                     </div>
 
 
@@ -552,15 +552,19 @@
 
                     <!--Catégorie sociopro-->
                     <div class="form-group col-lg-6 col-md-6">
+                        {{ form_label(form.categorieSocio) }}
+                        {{ form_errors(form.categorieSocio) }}
+                        {{ form_widget(form.categorieSocio, {'attr' : {'class' : 'form-control selectpicker', 'title' : 'Catégorie sociopro'}}) }}
+                        <!--
                         <select class="form-control selectpicker" title="Catégorie socioprofessionnelle">
                             <option>Artisant</option>
-                            <option>Artiste</option>
+                            <option>Artiste</option>, 
                             <option>Cadre</option>
                             <option>Employé</option>
                             <option>Employé qualifié</option>
                             <option>Ouvrier</option>
                             <option>Ouvrier qualifié</option>
-                        </select>
+                        </select>-->
                     </div>
 
 

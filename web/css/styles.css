@@ -798,7 +798,7 @@ td, th{
 	padding: 6px 16px;
 	vertical-align: center;
 }
-tr:first-of-type{
+thead tr:first-of-type{
 	background-color: #24888f;
 	color: white;
 

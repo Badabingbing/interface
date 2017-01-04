@@ -351,5 +351,9 @@ $('#enfants').click(function() {
   toggle: true
   });
 
+/////initialise le stupidtable
+  $(function(){
+      $("table").stupidtable();
+  });
 
 });
