@@ -10,7 +10,11 @@
 
                 <h1 class="titrePage col-lg-12 col-md-12">Ajouter un demandeur d'emploi</h1>
 
-                <form class="NewFlux col-lg-12 col-md-12" name="appbundle_demandeuremploi" method="post">
+
+
+                
+                <div class="NewFlux col-lg-12 col-md-12" name="appbundle_demandeuremploi">
+                    {{ form_start(form) }}
 
                 <!-- Action-->               
                 <div class="col-lg-12">
@@ -34,14 +38,20 @@
 
                     <!--nom-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <label for="nom"></label>
-                        <input type="text" class="form-control" id="nom" placeholder="Nom ..">
+                        <!--<label for="nom"></label>
+                        <input type="text" class="form-control" id="appbundle_demandeuremploi_nomDe" placeholder="Nom ..">-->
+                        {{ form_label(form.nomDe) }}
+                        {{ form_errors(form.nomDe) }}
+                        {{ form_widget(form.nomDe) }}
                     </div>
 
                     <!--prénom-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <label for="prenom"></label>
-                        <input type="text" class="form-control" id="prenom" placeholder="Prénom ..">
+                        <!--<label for="prenom"></label>
+                        <input type="text" class="form-control" id="prenom" placeholder="Prénom ..">-->
+                        {{ form_label(form.prenomDe) }}
+                        {{ form_errors(form.prenomDe) }}
+                        {{ form_widget(form.prenomDe) }}
                     </div>
 
                     <!--genre-->
@@ -420,8 +430,11 @@
 
                     <!--Tél mobile-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <label for="tMobile"></label>
-                        <input type="tel" class="form-control" id="tMobile" placeholder="Téléphone mobile ..">
+                        <!--<label for="tMobile"></label>
+                        <input type="tel" class="form-control" id="tMobile" placeholder="Téléphone mobile ..">-->
+                        {{ form_label(form.tel1De) }}
+                        {{ form_errors(form.tel1De) }}
+                        {{ form_widget(form.tel1De, {'attr' : {'placeholder' : 'telephone1'}}) }}
                     </div>
 
 
@@ -532,15 +545,19 @@
 
                     <!--Catégorie sociopro-->
                     <div class="form-group col-lg-6 col-md-6">
+                        {{ form_label(form.categorieSocio) }}
+                        {{ form_errors(form.categorieSocio) }}
+                        {{ form_widget(form.categorieSocio, {'attr' : {'class' : 'form-control selectpicker', 'title' : 'Catégorie sociopro'}}) }}
+                        <!--
                         <select class="form-control selectpicker" title="Catégorie socioprofessionnelle">
                             <option>Artisant</option>
-                            <option>Artiste</option>
+                            <option>Artiste</option>, 
                             <option>Cadre</option>
                             <option>Employé</option>
                             <option>Employé qualifié</option>
                             <option>Ouvrier</option>
                             <option>Ouvrier qualifié</option>
-                        </select>
+                        </select>-->
                     </div>
 
 
@@ -619,12 +636,13 @@
 
                     <!--Valider-->
                     <div class="col-lg-6">
-                        <button type="button" class="col-lg-11 btn-valider">VALIDER</button>
+                        <input type="submit" value="Create" name="Valider"> 
                     </div>
                   </div>
 
-
-                </form>
+                  {{ form_end(form) }}
+                </div><!--ancien tag form-->
+                
                 
               </div>
               

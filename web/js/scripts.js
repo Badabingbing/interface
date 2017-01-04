@@ -249,7 +249,7 @@ $('#enfants').click(function() {
         $.fn.editable.defaults.mode = 'inline';
             //remote source (advanced)
         $(this).editable({
-                    source: '../js/getCountries.json',
+                    source: '../js/villes.json',
                     select2: {
                         placeholder: 'Choisir une ville',
                         minimumInputLength: 1
@@ -351,6 +351,10 @@ $('#enfants').click(function() {
   toggle: true
   });
 
+/////initialise le stupidtable
+  $(function(){
+      $("table").stupidtable();
+  });
 
 
 });
