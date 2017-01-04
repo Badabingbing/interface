@@ -351,14 +351,5 @@ $('#enfants').click(function() {
   toggle: true
   });
 
-/////select des filtres
-    $.getJSON("../js/metiers.json", function (data) {
-        $.each(data, function (i, item) {
-            $('<option>', {
-                html: item + '</option>'
-            }).appendTo('#metierfiltre');
-        });
-    });
-
 
 });
