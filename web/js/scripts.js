@@ -249,7 +249,7 @@ $('#enfants').click(function() {
         $.fn.editable.defaults.mode = 'inline';
             //remote source (advanced)
         $(this).editable({
-                    source: '../js/getCountries.json',
+                    source: '../js/villes.json',
                     select2: {
                         placeholder: 'Choisir une ville',
                         minimumInputLength: 1
@@ -351,6 +351,14 @@ $('#enfants').click(function() {
   toggle: true
   });
 
+/////select des filtres
+    $.getJSON("../js/metiers.json", function (data) {
+        $.each(data, function (i, item) {
+            $('<option>', {
+                html: item + '</option>'
+            }).appendTo('#metierfiltre');
+        });
+    });
 
 
 });
