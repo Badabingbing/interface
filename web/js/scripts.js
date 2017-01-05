@@ -356,5 +356,4 @@ $('#enfants').click(function() {
       $("table").stupidtable();
   });
 
-
 });

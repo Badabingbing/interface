@@ -10,12 +10,9 @@
 
                 <h1 class="titrePage col-lg-12 col-md-12">Ajouter un demandeur d'emploi</h1>
 
-
-
+                <div class="NewFlux col-lg-12 col-md-12" name="appbundle_demandeuremploi" method="POST">
+                {{ form_start(form) }}
                 
-                <div class="NewFlux col-lg-12 col-md-12" name="appbundle_demandeuremploi">
-                    {{ form_start(form) }}
-
                 <!-- Action-->               
                 <div class="col-lg-12">
                     <select class="form-control selectpicker" title="Action.." data-width="23.3%">
@@ -38,56 +35,62 @@
 
                     <!--nom-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <!--<label for="nom"></label>
-                        <input type="text" class="form-control" id="appbundle_demandeuremploi_nomDe" placeholder="Nom ..">-->
                         {{ form_label(form.nomDe) }}
                         {{ form_errors(form.nomDe) }}
-                        {{ form_widget(form.nomDe) }}
+                        {{ form_widget(form.nomDe, {'attr' : {'placeholder' : 'Nom'}}) }}
                     </div>
 
                     <!--prénom-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <!--<label for="prenom"></label>
-                        <input type="text" class="form-control" id="prenom" placeholder="Prénom ..">-->
                         {{ form_label(form.prenomDe) }}
                         {{ form_errors(form.prenomDe) }}
-                        {{ form_widget(form.prenomDe) }}
+                        {{ form_widget(form.prenomDe, {'attr' : {'placeholder' : 'Prénom'}}) }}
                     </div>
 
                     <!--genre-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <select class="form-control selectpicker" title="Genre">
-                            <option>Autre</option>
-                            <option>Femme</option>
-                            <option>Homme</option>
-                        </select>
+                        {{ form_label(form.genregenre) }}
+                        {{ form_errors(form.genregenre) }}
+                        {{ form_widget(form.genregenre, {'attr' : {'class' : 'form-control selectpicker', 'title' : 'Genre'}}) }}
                     </div> 
 
                     <!--Tranche d'age-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <select class="form-control selectpicker" title="Tranche d'âge">
+                        {{ form_label(form.trancheAge) }}
+                        {{ form_errors(form.trancheAge) }}
+                        {{ form_widget(form.trancheAge, {'attr' : {'class' : 'form-control selectpicker'}}) }}
+                        {#<select class="form-control selectpicker" title="Tranche d'âge">
                             <option>Moins de 25 ans</option>
                             <option>Entre 25 et 49 ans</option>
                             <option>50 ans et plus</option>
-                        </select>
+                        </select>#}
                     </div>
 
                     <!--Date de naissance-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <label for="BirthDay"></label>
-                        <input type="text" class="form-control" id="BirthDay" placeholder="Date de naissance   .. / .. / ....">
+                        {{ form_label(form.dateNaissance) }}
+                        {{ form_errors(form.dateNaissance) }}
+                        {{ form_widget(form.dateNaissance, {'attr' : {'placeholder' : 'Date de naissance   .. / .. / ....'}}) }}
+                        {#<label for="BirthDay"></label>
+                        <input type="text" class="form-control" id="BirthDay" placeholder="Date de naissance   .. / .. / ....">#}
                     </div>
 
                     <!--Ville de naissance-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <label for="BirthCity"></label>
-                        <input type="text" class="form-control" id="BirthCity" placeholder="Ville de naissance ..">
+                        {{ form_label(form.villeNaissance) }}
+                        {{ form_errors(form.villeNaissance) }}
+                        {{ form_widget(form.villeNaissance, {'attr' : {'placeholder' : 'Ville de naissance ..'}}) }}
+                        {#<label for="BirthCity"></label>
+                        <input type="text" class="form-control" id="BirthCity" placeholder="Ville de naissance ..">#}
                     </div>
 
                     <!--Dépt. de naissance-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <label for="BirthDept"></label>
-                        <input type="date" class="form-control" id="BirthDept" placeholder="Département ..">
+                        {{ form_label(form.deptNaissance) }}
+                        {{ form_errors(form.deptNaissance) }}
+                        {{ form_widget(form.deptNaissance, {'attr' : {'placeholder' : 'Département ..'}}) }}
+                        {#<label for="BirthDept"></label>
+                        <input type="date" class="form-control" id="BirthDept" placeholder="Département ..">#}
                     </div>
 
                     <!--Pays de naissance-->
@@ -409,6 +412,9 @@
 
                     <!--Adresse-->
                     <div class="form-group col-lg-6 col-md-6">
+                        {#{{ form_label(form.adresseadresse) }}
+                        {{ form_errors(form.adresseadresse) }}
+                        {{ form_widget(form.adresseadresse, {'attr' : {'placeholder' : 'Adresse ..'}}) }}#}
                         <label for="adresse"></label>
                         <input type="text" class="form-control" id="adresse" placeholder="Adresse ..">
                     </div>
@@ -430,11 +436,9 @@
 
                     <!--Tél mobile-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <!--<label for="tMobile"></label>
-                        <input type="tel" class="form-control" id="tMobile" placeholder="Téléphone mobile ..">-->
                         {{ form_label(form.tel1De) }}
                         {{ form_errors(form.tel1De) }}
-                        {{ form_widget(form.tel1De, {'attr' : {'placeholder' : 'telephone1'}}) }}
+                        {{ form_widget(form.tel1De, {'attr' : {'placeholder' : 'telephone1 ..'}}) }}
                     </div>
 
 
@@ -508,6 +512,9 @@
 
                     <!--RQTH-->
                     <div class="form-group col-lg-6 col-md-6">
+                        {#{{ form_label(form.rqthrqth) }}
+                        {{ form_errors(form.rqthrqth) }}
+                        {{ form_widget(form.rqthrqth, {'attr' : {'placeholder' : 'RQTH ..'}}) }}#}
                         <select class="form-control selectpicker" title="RQTH">
                             <option>Non</option>
                             <option>Oui</option>
@@ -570,7 +577,10 @@
 
                     <!--Métier-->
                     <div class="form-group col-lg-6 col-md-6">
-                        <select class="form-control selectpicker" title="Métier">
+                        {{ form_label(form.metiermetier) }}
+                        {{ form_errors(form.metiermetier) }}
+                        {{ form_widget(form.metiermetier, {'attr' : {'class': 'form-control selectpicker', 'title' : 'Métier'}}) }}
+                        {#<select class="form-control selectpicker" title="Métier">
                             <option>Artisant</option>
                             <option>Artiste</option>
                             <option>Cadre</option>
@@ -578,7 +588,7 @@
                             <option>Employé qualifié</option>
                             <option>Ouvrier</option>
                             <option>Ouvrier qualifié</option>
-                        </select>
+                        </select>#}
                     </div>
 
 
@@ -636,13 +646,12 @@
 
                     <!--Valider-->
                     <div class="col-lg-6">
-                        <input type="submit" value="Create" name="Valider"> 
+                        <input type="submit" value="VALIDER" name="VALIDER" class="col-lg-11 btn-valider"/>
                     </div>
                   </div>
 
-                  {{ form_end(form) }}
-                </div><!--ancien tag form-->
-                
+                {{ form_end(form) }}
+                </div>
                 
               </div>
               
