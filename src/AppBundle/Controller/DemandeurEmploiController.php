@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\DemandeurEmploi;
+use AppBundle\Entity\Metier;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -24,13 +25,16 @@ class DemandeurEmploiController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $demandeurEmplois = $em->getRepository('AppBundle:DemandeurEmploi')->findAll();
+        $metier = $em->getRepository('AppBundle:Metier')->findAll();
 
         return $this->render('demandeuremploi/index.html.twig', array(
             'demandeurEmplois' => $demandeurEmplois,
+            'metier' => $metier,
         ));
     }
+
+
 
     /**
      * Creates a new demandeurEmploi entity.
