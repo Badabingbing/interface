@@ -795,17 +795,17 @@ tr:last-of-type{
 }
 
 td, th{
-	padding: 6px 16px;
-	vertical-align: center;
+	font-size: 12px;
+	max-width: 100px;
 }
 thead tr:first-of-type{
 	background-color: #24888f;
 	color: white;
-
 }
 th{
 	border-right: 1px solid rgba(255,255,255,.6);
-	
+	text-transform: uppercase;
+	height: 60px;
 }
 
 th:last-of-type{
@@ -824,6 +824,13 @@ td a{
 }
 td a:hover{
 	color: #ed9767;
+}
+.triable{
+	background-image: url(../img/icons/sort-arrows.png);
+	background-repeat: no-repeat;
+	background-position: 90% 20%;
+	background-size: 10px;
+	cursor: pointer;
 }
 
 /* pagination */
