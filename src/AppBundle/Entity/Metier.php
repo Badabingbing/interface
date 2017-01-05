@@ -63,4 +63,8 @@ class Metier
     {
         return $this->idmetier;
     }
+
+    public function __toString() {
+         return $this->metier; 
+         }
 }
