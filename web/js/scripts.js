@@ -348,7 +348,7 @@ $('#enfants').click(function() {
 
 //////collapse résumé
   $('.blockresum').collapse({
-  toggle: true
+  //toggle: true
   });
 
 /////initialise le stupidtable
