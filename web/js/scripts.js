@@ -356,4 +356,9 @@ $('#enfants').click(function() {
       $("table").stupidtable();
   });
 
+////toggle btn filtres page liste demandeurs
+$( ".filter" ).click(function() {
+  $( ".lesFiltres" ).toggle(400);
+});
+
 });

@@ -298,10 +298,12 @@ textarea{
 .titrePage{
 	font-family: 'GOTHAM';
 	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
 	text-align: left;
 	color: #4d4a4a;
 	text-transform: uppercase;
-	margin: 20px 0;
+	margin: 20px 0 0 0;
 }
 
 .inputNewFlux{
@@ -371,8 +373,8 @@ form h2, form h3{
  	text-transform: uppercase;
  	font-size: 18px;
  	padding:0;
- 	margin-top: 0;
-	margin-bottom: 0;
+ 	line-height: 1;
+ 	margin: 0;
 }
 label {
 	display: none;
@@ -710,9 +712,7 @@ button:hover {
 .télécharger {
 	float: right;
 }
-.formulaire button {
-	margin-left: 4%;
-}
+
 .btn-annuler, .btn-valider {
 	height: 60px;
 	font-size: 20px;
@@ -771,6 +771,7 @@ form .col-lg-12, form .col-lg-6,form .col-lg-3 {
 }
 .nmPrenm{
     display: inline;
+    margin: 20px 0 30px 0!important;
 }
 
 /* //////// ===== LISTE DEMANDEURS D'EMPLOI ===== //////// */
@@ -798,15 +799,99 @@ form .col-lg-12, form .col-lg-6,form .col-lg-3 {
     -webkit-transition: width .4s ease-in-out;
     transition: width .4s ease-in-out;
 }
+.addNew{
+	height: 40px;
+	margin-top: 20px;
+	font-size: 14px;
+	font-family: 'GOTHAM';
+	margin-bottom: 0;
+	padding-left: 10px;
+	background-image: url(../img/icons/sign.png);
+	background-size: 24px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+.addNew:hover{
+	color: #fff;
+}
+
+.rechRapide input{
+    border: 0;
+    box-shadow: none;
+}
+.rechRapide button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+.filtrer{
+	float: right;
+}
+.lesFiltres{
+	display: none;
+	margin-top: 20px;
+}
+.lesFiltres .bootstrap-select{
+	margin-top: 10px;
+}
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+.rechRapide button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+.rechRapide i{
+    font-size: 23px;
+}
 
 /* ======== table  ============*/
 .screen{
-	padding: 20px 40px 60px 40px;
+	padding: 20px 20px 60px 20px;
 }
 #listDE{
 	margin: 40px auto;
 	background-color: white;
+    width: 100%;
+    overflow-x:auto;
 }
+
+
+@media (max-width: 1280px) {
+  .permis,
+  .genre,
+  .idPe {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .rqth,
+  .metier {
+    display: none;
+  }
+}
+
 tr {
 	height: 60px;
 }
@@ -820,7 +905,6 @@ tr:last-of-type{
 
 td, th{
 	font-size: 12px;
-	max-width: 100px;
 }
 thead tr:first-of-type{
 	background-color: #24888f;
@@ -830,6 +914,7 @@ th{
 	border-right: 1px solid rgba(255,255,255,.6);
 	text-transform: uppercase;
 	height: 60px;
+	padding: 0 14px 0 6px;
 }
 
 th:last-of-type{
@@ -838,6 +923,7 @@ th:last-of-type{
 td{
 	border-right: 1px solid rgba(230,230,230,0.6);
 	border-top: 6px solid white;
+	padding: 0 6px;
 }
 
 td:last-of-type{
@@ -852,9 +938,10 @@ td a:hover{
 .triable{
 	background-image: url(../img/icons/sort-arrows.png);
 	background-repeat: no-repeat;
-	background-position: 90% 20%;
-	background-size: 10px;
+	background-position: 90% center;
+	background-size: 8px;
 	cursor: pointer;
+	margin-left: 2px;
 }
 
 /* pagination */
@@ -904,6 +991,30 @@ bleu-vert de la charte graphique
 */
 
 
+/* masquer les input non liés a la bdd*/
+#appbundle_demandeuremploi_photoDe,
+#appbundle_demandeuremploi_profildecol,
+#appbundle_demandeuremploi_tel2De,
+#appbundle_demandeuremploi_mailDe,
+#appbundle_demandeuremploi_qpv,
+#appbundle_demandeuremploi_nbrEnfantDe,
+#appbundle_demandeuremploi_paysNaissance,
+#appbundle_demandeuremploi_nationaliteDe,
+#appbundle_demandeuremploi_titreSejourDe,
+#appbundle_demandeuremploi_autorisationTravail,
+#appbundle_demandeuremploi_numPoleEmploiDe,
+#appbundle_demandeuremploi_rqthrqth,
+#appbundle_demandeuremploi_adresseadresse,
+#appbundle_demandeuremploi_niveauetudeniveauetude1,
+#appbundle_demandeuremploi_statutstatut,
+#appbundle_demandeuremploi_permispermis,
+#appbundle_demandeuremploi_useruser,
+#appbundle_demandeuremploi_diplomePro,
+#appbundle_demandeuremploi_locomotion,
+#appbundle_demandeuremploi_structureRef,
+#appbundle_demandeuremploi_allocation {
+	display: none;
+}
 
 
 
