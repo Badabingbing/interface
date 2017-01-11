@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %} 
 
-{% block title %}Liste | {{ parent() }}{% endblock %}
+{% block title %}{{ parent() }} | Liste{% endblock %}
 
 {% block body %}
 		{{ parent() }}
@@ -14,14 +14,13 @@
 			</div>
 			<div class="col-lg-12" name="appbundle_demandeuremploi" method="POST">	
 				
-				<select type="button" title="Métier" class="selectpicker" id="metier">
+				<select name="Nmetier" type="button" title="Métier" class="selectpicker" id="metier">
 					{% for choixmetier in metier %}
-						<option value="">
-							{{choixmetier}}
+						<option value="valeur1" name= "valeur1">
+							{{choixmetier}} 
 						</option>
 					{% endfor %}
 				</select>
-				
 
 				<select type="button" title="RQTH" class="selectpicker">
 					<option value="A">oui</option>
@@ -85,8 +84,10 @@
 		    <th class="triable" data-sort="string">Permis</th>
 		  </thead>
 
-{% for demandeurEmploi in demandeurEmplois %}
-		{% if (demandeurEmploi.metiermetier == true) %}
+	{#{% set b %}#}
+		{% for demandeurEmploi in demandeurEmplois %}
+			{#{% if ( demandeurEmploi.metiermetier == true) %}#}
+			{#{% if b|upper == demandeurEmploi.metiermetier|upper   %}#}
 			<tr>
 				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.idde }}</a></td>
 				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">A.Sentinnelle</a></td>
@@ -96,13 +97,14 @@
 				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.tel1De }}</a></td>
 				<td><a href="mailto:contact@site.com">{{ demandeurEmploi.mailDe }}</a></td>
 				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.numPoleEmploiDe }}</a></td>
-				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.metiermetier }}</a></td>
+				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.metiermetier }} </a></td>
 				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.rqthrqth }}</a></td>
 				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.qpv }}</a></td>
 				<td><a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">{{ demandeurEmploi.locomotion }}</a></td>
 			</tr>
-		{% endif %}
-{% endfor %}
+			{#{% endif %}#}
+		{% endfor %}
+	{#{% endset %}#}
 
 		</table> 
 
