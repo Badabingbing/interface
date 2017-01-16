@@ -348,12 +348,17 @@ $('#enfants').click(function() {
 
 //////collapse résumé
   $('.blockresum').collapse({
-  toggle: true
+  //toggle: true
   });
 
 /////initialise le stupidtable
   $(function(){
       $("table").stupidtable();
   });
+
+////toggle btn filtres page liste demandeurs
+$( ".filter" ).click(function() {
+  $( ".lesFiltres" ).toggle(400);
+});
 
 });
