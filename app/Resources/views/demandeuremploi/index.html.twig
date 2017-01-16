@@ -106,32 +106,37 @@
 {% for demandeurEmploi in demandeurEmplois %}
 
 			<tr>
-				<td>
+				<td class="id">
 					<a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">
 						{{ demandeurEmploi.idde }}
 					</a>
 				</td>
-				<td>
+				<td class="action">
 					<a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">
 					</a>
 				</td>
-				<td>
+				<td  class="nom">
 					<a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">
 						{{ demandeurEmploi.nomDe }}
 					</a>
 				</td>
-				<td>
+				<td  class="prenom">
 					<a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">
 						{{ demandeurEmploi.prenomDe }}
 					</a>
 				</td>
 
-				<td>
+				<td class="genre">
+					<a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">
+						{{ demandeurEmploi.genregenre }}
+					</a>
+				</td>
+				<td class="tel">
 					<a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">
 						{{ demandeurEmploi.tel1De }}
 					</a>
 				</td>
-				<td>
+				<td class="mail">
 					<a href="mailto:contact@site.com">
 						{{ demandeurEmploi.mailDe }}
 					</a>
@@ -148,6 +153,7 @@
 				</td>
 				<td class="rqth">
 					<a href="{{ path('demandeurs_show', { 'id': demandeurEmploi.idde }) }}">
+						{{ demandeurEmploi.rqthrqth }}
 					</a>
 				</td>
 				<td class="qpv">
