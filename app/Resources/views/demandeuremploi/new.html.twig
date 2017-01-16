@@ -438,7 +438,7 @@
                     <div class="form-group col-lg-6 col-md-6">
                         {{ form_label(form.tel1De) }}
                         {{ form_errors(form.tel1De) }}
-                        {{ form_widget(form.tel1De, {'attr' : {'placeholder' : 'telephone1 ..'}}) }}
+                        {{ form_widget(form.tel1De, {'attr' : {'placeholder' : 'telephone1 ..', 'color' : '#4d4a4a'}}) }}
                     </div>
 
 
@@ -579,7 +579,7 @@
                     <div class="form-group col-lg-6 col-md-6">
                         {{ form_label(form.metiermetier) }}
                         {{ form_errors(form.metiermetier) }}
-                        {{ form_widget(form.metiermetier, {'attr' : {'class': 'form-control selectpicker', 'title' : 'Métier'}}) }}
+                        {{ form_widget(form.metiermetier, {'attr' : {'class': 'form-control selectpicker', 'title' : 'Métier', 'color' : '#4d4a4a'}}) }}
                         {#<select class="form-control selectpicker" title="Métier">
                             <option>Artisant</option>
                             <option>Artiste</option>
@@ -638,15 +638,15 @@
                 </div><!-- End Colonne Droite du Formulaire -->
 
                   <!-- VALIDER / ANNULER le formulaire -->
-                  <div class="col-lg-12 formulaire">
+                  <div class="col-lg-12 col-md-12 col-sm-12 formulaire">
                     <!--Annuler-->
-                    <div class="col-lg-6">
-                        <a href="{{ path('demandeurs_index') }}"><button type="button" class="col-lg-11 btn-annuler">ANNULER</button></a>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <a href="{{ path('demandeurs_index') }}"><button type="button" class="col-lg-12 col-md-12 col-sm-12 btn-annuler">ANNULER</button></a>
                     </div>
 
                     <!--Valider-->
-                    <div class="col-lg-6">
-                        <input type="submit" value="VALIDER" name="VALIDER" class="col-lg-11 btn-valider"/>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <button type="submit" value="VALIDER" name="VALIDER" class="col-lg-12 col-md-12 col-sm-12 btn-valider">Valider</button>
                     </div>
                   </div>
 
