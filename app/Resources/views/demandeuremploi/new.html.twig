@@ -555,16 +555,6 @@
                         {{ form_label(form.categorieSocio) }}
                         {{ form_errors(form.categorieSocio) }}
                         {{ form_widget(form.categorieSocio, {'attr' : {'class' : 'form-control selectpicker', 'title' : 'Catégorie sociopro'}}) }}
-                        <!--
-                        <select class="form-control selectpicker" title="Catégorie socioprofessionnelle">
-                            <option>Artisant</option>
-                            <option>Artiste</option>, 
-                            <option>Cadre</option>
-                            <option>Employé</option>
-                            <option>Employé qualifié</option>
-                            <option>Ouvrier</option>
-                            <option>Ouvrier qualifié</option>
-                        </select>-->
                     </div>
 
 
@@ -580,15 +570,6 @@
                         {{ form_label(form.metiermetier) }}
                         {{ form_errors(form.metiermetier) }}
                         {{ form_widget(form.metiermetier, {'attr' : {'class': 'form-control selectpicker', 'title' : 'Métier', 'color' : '#4d4a4a'}}) }}
-                        {#<select class="form-control selectpicker" title="Métier">
-                            <option>Artisant</option>
-                            <option>Artiste</option>
-                            <option>Cadre</option>
-                            <option>Employé</option>
-                            <option>Employé qualifié</option>
-                            <option>Ouvrier</option>
-                            <option>Ouvrier qualifié</option>
-                        </select>#}
                     </div>
 
 
@@ -614,13 +595,19 @@
 
 
                     <!--Permis-->
-                    <select class="selectpicker col-lg-6 col-md-6" multiple title="Permis.." data-width="49.7%">
-                        <option>Annonceur Sentinelle</option>
-                        <option>Flux</option>
-                        <option>IRVIN</option>
-                        <option>Numérique</option>
-                        <option>Securité</option>
-                    </select>
+                    <div class="form-group col-lg-6 col-md-6">
+                        {{ form_label(form.permispermis) }}
+                        {{ form_errors(form.permispermis) }}
+                        {{ form_widget(form.permispermis, {'attr' : {'class': 'form-control selectpicker', 'title' : 'Permis', 'color' : '#4d4a4a'}}) }}
+                    </div>
+                    {#<select class="selectpicker col-lg-6 col-md-6" multiple title="Permis.." data-width="49.7%">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>BEA</option>
+                    </select>#}
 
 
                     <!--Moyen de locomation-->
