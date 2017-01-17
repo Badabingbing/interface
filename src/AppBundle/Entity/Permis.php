@@ -164,6 +164,6 @@ class Permis
 
     public function __toString()
    {
-      return strval( $this->getIdpermis() );
+      return strval( $this->getPermis() );
    }
 }
