@@ -66,7 +66,7 @@ class Rqth
     
     public function __toString()
    {
-      return strval( $this->getIdrqth() );
+      return strval( $this->getRqth() );
    }
 
 }
