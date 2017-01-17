@@ -1100,7 +1100,11 @@ class DemandeurEmploi
      */
     public function getPermispermis()
     {
-        return $this->permispermis;
+        $strPermis = "";
+            foreach ($this->permispermis as $permis) {
+                $strPermis .= $permis . " ";
+            }
+            return $strPermis;
     }
 
     /**
