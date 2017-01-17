@@ -66,6 +66,6 @@ class Genre
 
     public function __toString()
    {
-      return strval( $this->getIdgenre() );
+      return strval( $this->getGenre() );
    }
 }
